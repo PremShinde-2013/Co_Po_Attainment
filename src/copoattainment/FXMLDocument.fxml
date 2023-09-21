@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.FXMLDocumentController">
+   <top>
+      <MenuBar prefHeight="0.0" prefWidth="581.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="225.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="1000.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="898.0" style="-fx-border-color: black;" text="PO Attainment" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Label>
+                  <GridPane alignment="CENTER" hgap="20.0" layoutX="9.0" layoutY="233.0" vgap="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="140.80001220703124" minHeight="10.0" prefHeight="60.0000015258789" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="PO" textAlignment="CENTER" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="Competency" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="Indicators" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="Weight" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="CO1" GridPane.columnIndex="4" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="CO2" GridPane.columnIndex="5" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="CO3" GridPane.columnIndex="6" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="CO4" GridPane.columnIndex="7" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <Label alignment="CENTER" style="-fx-background-color: #bababa;" text="CO5" GridPane.columnIndex="8" GridPane.halignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding></Label>
+                        <TextArea fx:id="com1" prefHeight="200.0" prefWidth="200.0" promptText="Enter competency Here" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="com2" prefHeight="200.0" prefWidth="200.0" promptText="Enter competency Here" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextArea fx:id="com3" prefHeight="200.0" prefWidth="200.0" promptText="Enter competency Here" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextArea fx:id="com4" prefHeight="200.0" prefWidth="200.0" promptText="Enter competency Here" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextArea fx:id="ind1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextArea fx:id="ind2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextArea fx:id="ind3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextArea fx:id="ind4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextArea fx:id="ind5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <TextField fx:id="w1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="w2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <TextField fx:id="w3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="w4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <TextField fx:id="w5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <TextField fx:id="co11" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <TextField fx:id="co12" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <TextField fx:id="co13" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <TextField fx:id="co14" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <TextField fx:id="co15" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <TextField fx:id="co21" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <TextField fx:id="co22" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <TextField fx:id="co23" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <TextField fx:id="co24" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <TextField fx:id="co25" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <TextField fx:id="co31" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <TextField fx:id="co33" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <TextField fx:id="co32" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <TextField fx:id="co34" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <TextField fx:id="co35" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                        <TextField fx:id="co41" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <TextField fx:id="co42" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                        <TextField fx:id="co43" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                        <TextField fx:id="co44" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                        <TextField fx:id="co45" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                        <TextField fx:id="co51" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <TextField fx:id="co52" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                        <TextField fx:id="co53" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                        <TextField fx:id="co54" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                        <TextField fx:id="co55" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                        <TextField fx:id="wtotal" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <TextField fx:id="co1total" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                        <TextField fx:id="co2total" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                        <TextField fx:id="co3total" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                        <TextField fx:id="co4total" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                        <TextField fx:id="co5total" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="178.0" text="PO1 : Mapping Level" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                        <Button fx:id="btnAdd" alignment="CENTER" mnemonicParsing="false" onAction="#Add" text="Add" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btndelete" layoutX="111.0" layoutY="592.0" mnemonicParsing="false" onAction="#Delete" text="Delete" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnupdate" mnemonicParsing="false" onAction="#Update" text="Update" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnmapping" mnemonicParsing="false" onAction="#Mapping" text="Get Mapping Level" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <TextArea fx:id="po11" prefHeight="200.0" prefWidth="200.0" text="PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineeringfundamentals, and an engineering specialization to the solution of complex engineering problems." GridPane.rowIndex="1" />
+                        <TextArea fx:id="po12" prefHeight="200.0" prefWidth="200.0" text="PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineeringfundamentals, and an engineering specialization to the solution of complex engineering problems." GridPane.rowIndex="2" />
+                        <TextArea fx:id="po13" prefHeight="200.0" prefWidth="200.0" text="PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineeringfundamentals, and an engineering specialization to the solution of complex engineeringproblems." GridPane.rowIndex="3" />
+                        <TextArea fx:id="po14" prefHeight="200.0" prefWidth="200.0" text="PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineeringfundamentals, and an engineering specialization to the solution of complex engineering problems." GridPane.rowIndex="4" />
+                        <TextArea fx:id="po15" prefHeight="200.0" prefWidth="200.0" text="PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineeringfundamentals, and an engineering specialization to the solution of complex engineering problems." GridPane.rowIndex="5" />
+                        <TextArea fx:id="com5" prefHeight="200.0" prefWidth="200.0" promptText="Enter competency Here" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
