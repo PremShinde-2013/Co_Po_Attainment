@@ -24,7 +24,7 @@ import javafx.scene.control.Alert;
  *
  * @author ASUS
  */
-public class FXMLDocumentController implements Initializable {
+public class COPOTableController implements Initializable {
     @FXML 
     private Label label;
      @FXML
@@ -311,7 +311,7 @@ alert.showAndWait();
 
 
 }  catch(SQLException ex){
-        Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE,null,ex);
+        Logger.getLogger(COPOTableController.class.getName()).log(Level.SEVERE,null,ex);
 //            ex.printStackTrace();
 
 }     
