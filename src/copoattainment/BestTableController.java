@@ -4,22 +4,6 @@
  */
 package copoattainment;
 
-
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.control.Alert;
-         
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -41,7 +25,7 @@ import javafx.scene.control.TextField;
  *
  * @author ASUS
  */
-public class COPOTableController implements Initializable {
+public class BestTableController implements Initializable {
 
     @FXML
     private TextArea po1com1;
@@ -3129,7 +3113,7 @@ alert.showAndWait();
         Logger.getLogger(COPOTableController.class.getName()).log(Level.SEVERE,null,ex);
 //            ex.printStackTrace();
 
-}       
+}     
      
         
     }

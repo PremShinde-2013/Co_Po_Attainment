@@ -20,6 +20,8 @@ public class COPOAttainment extends Application {
     public void start(Stage stage) throws Exception {
 //        Parent root = FXMLLoader.load(getClass().getResource("COPOTable.fxml"));
                 Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+//                                Parent root = FXMLLoader.load(getClass().getResource("bestTable.fxml"));
+
 
         
         Scene scene = new Scene(root);
