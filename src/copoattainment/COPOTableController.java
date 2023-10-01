@@ -4,22 +4,6 @@
  */
 package copoattainment;
 
-
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.control.Alert;
-         
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -1594,8 +1578,8 @@ program1co53 = po1co53.getText();
 program1co54 = po1co54.getText();
 program1co55 = po1co55.getText();
 program1co5total = po1co5total.getText();
-
-//  for program 2
+//
+////  for program 2
 program21 = po21.getText();
 program22 = po22.getText();
 program23 = po23.getText();
@@ -1656,8 +1640,8 @@ program2co54 = po2co54.getText();
 program2co55 = po2co55.getText();
 program2co5total = po2co5total.getText();
 
-
-//program 3 
+//
+////program 3 
  program31 = po31.getText();
     program32 = po32.getText();
     program33 = po33.getText();
@@ -2428,7 +2412,7 @@ pst6 = con.prepareStatement("INSERT INTO `copotable` (`PO`, `Competency`, `Indic
     pst10.setString(9, program2co55);
     pst10.setString(10, program2co5total);
     pst10.executeUpdate();
-    
+//    
       pst11 = con.prepareStatement("INSERT INTO `copotable` (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `PO1Mapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         pst11.setString(1, program31);
@@ -2706,6 +2690,9 @@ pst30.setString(8, program6co54);
 pst30.setString(9, program6co55);
 pst30.setString(10, program6co5total);
 pst30.executeUpdate();
+
+pst31 = con.prepareStatement("INSERT INTO `copotable` (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `PO1Mapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
 pst31.setString(1, program71);
 pst31.setString(2, program7com1);
 pst31.setString(3, program7ind1);
@@ -2718,6 +2705,8 @@ pst31.setString(9, program7co15);
 pst31.setString(10, program7co1total);
 pst31.executeUpdate();
 
+pst32 = con.prepareStatement("INSERT INTO `copotable` (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `PO1Mapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
 pst32.setString(1, program72);
 pst32.setString(2, program7com2);
 pst32.setString(3, program7ind2);
@@ -2729,6 +2718,7 @@ pst32.setString(8, program7co24);
 pst32.setString(9, program7co25);
 pst32.setString(10, program7co2total);
 pst32.executeUpdate();
+pst33 = con.prepareStatement("INSERT INTO `copotable` (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `PO1Mapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 pst33.setString(1, program73);
 pst33.setString(2, program7com3);
@@ -2741,6 +2731,7 @@ pst33.setString(8, program7co34);
 pst33.setString(9, program7co35);
 pst33.setString(10, program7co3total);
 pst33.executeUpdate();
+pst34 = con.prepareStatement("INSERT INTO `copotable` (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `PO1Mapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 pst34.setString(1, program74);
 pst34.setString(2, program7com4);
@@ -2753,6 +2744,7 @@ pst34.setString(8, program7co44);
 pst34.setString(9, program7co45);
 pst34.setString(10, program7co4total);
 pst34.executeUpdate();
+pst35 = con.prepareStatement("INSERT INTO `copotable` (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `PO1Mapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 pst35.setString(1, program75);
 pst35.setString(2, program7com5);
@@ -3129,7 +3121,7 @@ alert.showAndWait();
         Logger.getLogger(COPOTableController.class.getName()).log(Level.SEVERE,null,ex);
 //            ex.printStackTrace();
 
-}       
+}     
      
         
     }
@@ -3198,7 +3190,7 @@ private void Mapping(ActionEvent event) {
     po1co3total.setText(String.valueOf(Totalco3));
     po1co4total.setText(String.valueOf(Totalco4));
     po1co5total.setText(String.valueOf(Totalco5));
-    
+//    
 //    for program 2 
  float AddWeight1_2 = Float.valueOf(po2w1.getText());
     float AddWeight2_2 = Float.valueOf(po2w2.getText());

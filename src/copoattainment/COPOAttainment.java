@@ -21,6 +21,8 @@ public class COPOAttainment extends Application {
 //        Parent root = FXMLLoader.load(getClass().getResource("COPOTable.fxml"));
                 Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 //                                Parent root = FXMLLoader.load(getClass().getResource("bestTable.fxml"));
+//                                Parent root = FXMLLoader.load(getClass().getResource("POCOGraph.fxml"));
+
 
 
         
