@@ -404,7 +404,7 @@ try{
 //        pst1 = con.prepareStatement("INSERT INTO  " + tableName + " (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `POMapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 //        pst1 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 System.out.println("connectedDBName: " + connectedDBName);
-System.out.println("tableName: " + inputtableName);
+//System.out.println("tableName: " + inputtableName);
 
  String tableName = inputtableName;
         
