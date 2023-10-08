@@ -6,8 +6,10 @@ package copoattainment;
 
 import java.net.URL; 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -18,8 +20,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import utils.ConnectionUtils;
 
 /**
  * FXML Controller class
@@ -27,6 +32,7 @@ import javafx.scene.control.TextField;
  * @author ASUS
  */
 public class BestTableController implements Initializable {
+    
 
     @FXML
     private TextArea po1com1;
@@ -140,7 +146,15 @@ public class BestTableController implements Initializable {
     private TextArea po1com5;
     @FXML
     private TextField dbtablename;
+    
+    private Label lblUsername;
+     private String username;
+     
 
+    public void setUsername(String username) {
+        this.username = username;
+//        lblUsername.setText("Welcome, " + username + "!");
+    }
     /**
      * Initializes the controller class.
      */
@@ -312,7 +326,7 @@ String program121, program122, program123, program124, program125;
         String program12co41, program12co42, program12co43, program12co44, program12co45, program12co4total;
         String program12co51, program12co52, program12co53, program12co54, program12co55, program12co5total;
 
-    String tableName;    
+    String inputtableName;    
         
         // ... (retrieve other fields)
 program11 = po11.getText();
@@ -375,47 +389,57 @@ program1co54 = po1co54.getText();
 program1co55 = po1co55.getText();
 program1co5total = po1co5total.getText();
 
-         tableName = dbtablename.getText(); // Assuming you have a TextField named dbtablename
+         inputtableName = dbtablename.getText(); // Assuming you have a TextField named dbtablename
 
 
 
 
 try{
-    
-// Class.forName("com.mysql.jdbc.Driver");
-//            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/"+ connectedDBName, "root","");
-        Statement stmt = con.createStatement();
-        String createTableQuery = "CREATE TABLE IF NOT EXISTS " + tableName + " (" +
-                "PO VARCHAR(255) NOT NULL , " +
-                "Competency VARCHAR(255) NOT NULL , " +
-                "Indicators VARCHAR(255) NOT NULL , " +
-                "Weight DOUBLE NOT NULL , " +
-                "CO1 INT(10) NOT NULL , " +
-                "CO2 INT(10) NOT NULL , " +
-                "CO3 INT(10) NOT NULL , " +
-                "CO4 INT(10) NOT NULL , " +
-                "CO5 INT(10) NOT NULL , " +
-                "POMapping INT(10) NOT NULL , " +
-                "timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP " +
+//                Connection con = ConnectionUtils.conDB(ConnectionHolder.getConnectedDBName());
+        Connection con = ConnectionUtils.conDB(ConnectionHolder.getConnectedDBName());
 
-                // Add other fields as needed
-                ")";
-//       String createTableQuery = " CREATE TABLE `copoattainment`.`imptable` (`PO` VARCHAR(255) NOT NULL , `Competency` VARCHAR(255) NOT NULL , `Indicators` VARCHAR(255) NOT NULL , `Weight` DOUBLE NOT NULL , `CO1` INT(10) NOT NULL , `CO2` INT(10) NOT NULL , `CO3` INT(10) NOT NULL , `CO4` INT(10) NOT NULL , `CO5` INT(10) NOT NULL , `POMapping` INT(10) NOT NULL , `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP )";
-//       String createTableQuery = " CREATE TABLE IF NOT EXISTS `copoattainment`.`imptable` (`PO` VARCHAR(255) NOT NULL , `Competency` VARCHAR(255) NOT NULL , `Indicators` VARCHAR(255) NOT NULL , `Weight` DOUBLE NOT NULL , `CO1` INT(10) NOT NULL , `CO2` INT(10) NOT NULL , `CO3` INT(10) NOT NULL , `CO4` INT(10) NOT NULL , `CO5` INT(10) NOT NULL , `POMapping` INT(10) NOT NULL , `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP )";
+            String connectedDBName = ConnectionHolder.getConnectedDBName();
 
-        
-        stmt.executeUpdate(createTableQuery);
-    
-    
-      // Clear the database
-//        PreparedStatement clearStatement = con.prepareStatement("DELETE FROM copotable");
-//        clearStatement.executeUpdate();
-//    
     
 //        pst1 = con.prepareStatement("INSERT INTO  " + tableName + " (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `POMapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        pst1 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+//        pst1 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+System.out.println("connectedDBName: " + connectedDBName);
+System.out.println("tableName: " + inputtableName);
 
-               
+ String tableName = inputtableName;
+        
+        // Modify the SQL statement to create a new table
+        DatabaseMetaData metaData = con.getMetaData();
+        ResultSet tables = metaData.getTables(null, connectedDBName, tableName, null);
+        if (!tables.next()) {
+            // Table doesn't exist, create it
+            String createTableSQL = "CREATE TABLE " + connectedDBName + "." + tableName + " (" +
+                    "id INT PRIMARY KEY AUTO_INCREMENT, " +
+                    "PO VARCHAR(255), " +
+                    "Competency VARCHAR(255), " +
+                    "Indicators VARCHAR(255), " +
+                    "Weight FLOAT, " +
+                    "CO1 INT, " +
+                    "CO2 INT, " +
+                    "CO3 INT, " +
+                    "CO4 INT, " +
+                    "CO5 INT, " +
+                    "POMapping INT)";
+
+            PreparedStatement createTableStmt = con.prepareStatement(createTableSQL);
+            createTableStmt.executeUpdate();
+        } else {
+            // Table exists, truncate it
+            Statement truncateTableStmt = con.createStatement();
+            truncateTableStmt.executeUpdate("TRUNCATE TABLE " + connectedDBName + "." + tableName);
+        }
+
+
+
+
+                pst1 = con.prepareStatement("INSERT INTO " + connectedDBName + "." + tableName + " " +
+                "(PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
       pst1.setString(1, program11);
         pst1.setString(2, program1com1);
@@ -432,8 +456,10 @@ pst1.executeUpdate();
 
 
 // pst2 = con.prepareStatement("INSERT INTO " + tableName + " (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `POMapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        pst2 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
+//        pst2 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+pst2 = con.prepareStatement("INSERT INTO " + connectedDBName + "." + tableName + " " +
+                "(PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                
 
       pst2.setString(1, program12);
@@ -450,8 +476,10 @@ pst2.executeUpdate();
 
 
 // pst3 = con.prepareStatement("INSERT INTO " + tableName + "  (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `POMapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        pst3 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
+//        pst3 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+pst3 = con.prepareStatement("INSERT INTO " + connectedDBName + "." + tableName + " " +
+                "(PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                
 
       pst3.setString(1, program13);
@@ -468,8 +496,10 @@ pst3.executeUpdate();
 
 
 // pst4 = con.prepareStatement("INSERT INTO " + tableName + "  (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `POMapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        pst4 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
+//        pst4 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+pst4 = con.prepareStatement("INSERT INTO " + connectedDBName + "." + tableName + " " +
+                "(PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                
 
       pst4.setString(1, program14);
@@ -485,8 +515,10 @@ pst3.executeUpdate();
 pst4.executeUpdate();
 
 // pst5 = con.prepareStatement("INSERT INTO " + tableName + " (`PO`, `Competency`, `Indicators`, `Weight`, `CO1`, `CO2`, `CO3`, `CO4`, `CO5`, `POMapping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        pst5 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
+//        pst5 = con.prepareStatement("INSERT INTO  " + tableName + " (PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+pst5 = con.prepareStatement("INSERT INTO " + connectedDBName + "." + tableName + " " +
+                "(PO, Competency, Indicators, Weight, CO1, CO2, CO3, CO4, CO5, POMapping) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                
 
       pst5.setString(1, program15);
@@ -517,6 +549,8 @@ alert.showAndWait();
 }  catch(SQLException ex){
         Logger.getLogger(COPOTableController.class.getName()).log(Level.SEVERE,null,ex);
 //            ex.printStackTrace();
+        Logger.getLogger(COPOTableController.class.getName()).log(Level.SEVERE, null, ex);
+
 
 }     
      
@@ -601,36 +635,39 @@ private void Mapping(ActionEvent event) {
     PreparedStatement pst3;
     PreparedStatement pst4;
     PreparedStatement pst5;
-
+PreparedStatement pst10;
     
         
 
-    int myIndex;
-    int id;
-    public void Connect(){
-//         Connection userConnection = ConnectionHolder.getUserConnection();
+//    int myIndex;
+//    int id;
+//    public void Connect(){
+////         Connection userConnection = ConnectionHolder.getUserConnection();
+////        String connectedDBName = ConnectionHolder.getConnectedDBName();
+////        Connection userConnection = ConnectionHolder.getUserConnection();
+////        String connectedDBName = ConnectionHolder.getConnectedDBName();
+//
+//        Connection userConnection = ConnectionHolder.getUserConnection();
 //        String connectedDBName = ConnectionHolder.getConnectedDBName();
-        Connection userConnection = ConnectionHolder.getUserConnection();
-        String connectedDBName = ConnectionHolder.getConnectedDBName();
-
-
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/"+ connectedDBName, "root","");
-            
-            
-        }catch(ClassNotFoundException ex){
-            
-        }
-        catch(SQLException ex){
-        ex.printStackTrace();
-    }
-            
-            
-    }
-    
-    
-    
+//
+//
+//        try{
+//            Class.forName("com.mysql.jdbc.Driver");
+//            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/"+ connectedDBName, "root","");
+//            
+//            
+//        }catch(ClassNotFoundException ex){
+//            
+//        }
+//        catch(SQLException ex){
+//        ex.printStackTrace();
+//    }
+//            
+//            
+//    }
+//    
+//    
+//    
     
     
 //     @Override
@@ -640,7 +677,23 @@ private void Mapping(ActionEvent event) {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Connect();
+         
+        
+//        String dbName = "user_database_" + user_username;
+        String dbName = "user_" + username;
+
+        
+         Connection connection = ConnectionUtils.conDB(dbName);
+
+        if (connection != null) {
+            System.out.println("Connected to database: " + dbName);
+            // Perform operations on the connected database
+            // ...
+        } else {
+            System.err.println("Failed to connect to database: " + dbName);
+        }
+
+//        Connect();
     }    
 //    
 }

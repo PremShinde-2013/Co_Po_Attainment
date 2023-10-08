@@ -239,17 +239,32 @@ public class LoginController implements Initializable {
 //               
                 try {
                     
+//         *****************   old ***************
+//                    //add your loading or delays - ;-)
+//                    Node node = (Node) event.getSource();
+//                    Stage stage = (Stage) node.getScene().getWindow();
+//                    //stage.setMaximized(true);
+//                    stage.close();
+////                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("COPOTable.fxml")));
+//                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("bestTable.fxml")));
+//                    
+//                   
+//        
+//                    stage.setScene(scene);
+//                    stage.show();
+ 
+//****************** new *************
 
-                    //add your loading or delays - ;-)
-                    Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
-                    //stage.setMaximized(true);
-                    stage.close();
-//                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("COPOTable.fxml")));
-                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("bestTable.fxml")));
+                   FXMLLoader loader = new FXMLLoader(getClass().getResource("bestTable.fxml"));
+                Parent root = loader.load();
 
-                    stage.setScene(scene);
-                    stage.show();
+                BestTableController tableController = loader.getController();
+                tableController.setUsername(txtUsername.getText());
+
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
 
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());
@@ -268,7 +283,7 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        con = ConnectionUtils.conDB("copoattainment"); // Connect to a fixed database
+//        con = ConnectionUtils.conDB("copoattainment"); // Connect to a fixed database
 
         if (con == null) {
             lblErrors.setTextFill(Color.TOMATO);
@@ -288,12 +303,19 @@ public class LoginController implements Initializable {
             setLblError(Color.TOMATO, "Empty credentials");
             status = "Error";
         } else {
-            String dbName = "user_" + email;
-            Connection userConnection = ConnectionUtils.conDB(dbName);
+String dbName = "user_" + email;
+Connection userConnection = ConnectionUtils.conDB(dbName);
 
             if (userConnection != null) {
+                    ConnectionHolder.setUserConnection(userConnection, dbName);
+
                 String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
                 try {
+//                                    ConnectionHolder.setUserConnection(con, "copoattainment");
+//                                    ConnectionHolder.setUserConnection(con, "copoattainment");
+
+
+
                     preparedStatement = userConnection.prepareStatement(sql);
                     preparedStatement.setString(1, email);
                     preparedStatement.setString(2, password);

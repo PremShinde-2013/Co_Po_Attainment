@@ -15,12 +15,12 @@ package copoattainment;
     public static java.sql.Connection getUserConnection() {
         return userConnection;
     }
+    
 
-    public static void setUserConnection(java.sql.Connection connection, String dbName) {
-        userConnection = connection;
-        connectedDBName = dbName;
-    }
-
+   public static void setUserConnection(java.sql.Connection connection, String dbName) {
+    userConnection = connection;
+    connectedDBName = dbName;
+}
     public static String getConnectedDBName() {
         return connectedDBName;
     }
