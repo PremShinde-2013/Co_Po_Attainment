@@ -389,7 +389,7 @@ program1co54 = po1co54.getText();
 program1co55 = po1co55.getText();
 program1co5total = po1co5total.getText();
 
-         inputtableName = dbtablename.getText(); // Assuming you have a TextField named dbtablename
+         inputtableName = dbtablename.getText(); 
 
 
 

@@ -254,12 +254,22 @@ public class LoginController implements Initializable {
 //                    stage.show();
  
 //****************** new *************
+//                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("COPOTable.fxml")));
 
-                   FXMLLoader loader = new FXMLLoader(getClass().getResource("bestTable.fxml"));
+//                   FXMLLoader loader = new FXMLLoader(getClass().getResource("bestTable.fxml"));
+//                   FXMLLoader loader = new FXMLLoader(getClass().getResource("COPOTable.fxml"));
+FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+
+
                 Parent root = loader.load();
 
-                BestTableController tableController = loader.getController();
-                tableController.setUsername(txtUsername.getText());
+//                BestTableController tableController = loader.getController();
+//                COPOTableController tableController = loader.getController();
+
+                
+//    DashboardController dashboardController = loader.getController();
+
+//                tableController.setUsername(txtUsername.getText());
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);

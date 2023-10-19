@@ -71,7 +71,9 @@
 package utils;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -86,6 +88,24 @@ public class ConnectionUtils {
             return null;
         }
     }
+      public static int getNumberOfTables(String dbName) {
+    try (Connection con = conDB(dbName)) {
+        DatabaseMetaData metaData = con.getMetaData();
+        ResultSet tables = metaData.getTables(null, null, "%", new String[] { "TABLE" });
+
+        int count = 0;
+        while (tables.next()) {
+            count++;
+        }
+
+        return count;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return -1; // Return -1 to indicate an error
+    }
+
+}
+
 
     public static Connection createNewDatabase(String dbName) {
         try {
@@ -111,5 +131,7 @@ public class ConnectionUtils {
             System.err.println("ConnectionUtils : " + ex.getMessage());
             return null;
         }
+        
+        
     }
 }

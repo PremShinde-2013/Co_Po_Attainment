@@ -17,8 +17,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="9000.0" prefWidth="2500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.COPOTableController">
-   <content>
+<!--<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="9000.0" prefWidth="2500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.COPOTableController">-->
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="9000.0" prefWidth="2500.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="copoattainment.COPOTableController">
+
+    <content>
       <VBox prefHeight="1474.0" prefWidth="1535.0">
          <children>
             <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="1900.0">
@@ -193,6 +195,7 @@
                                     <TextArea fx:id="po14" prefHeight="200.0" prefWidth="200.0" text="PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineeringfundamentals, and an engineering specialization to the solution of complex engineering problems." GridPane.rowIndex="4" />
                                     <TextArea fx:id="po15" prefHeight="200.0" prefWidth="200.0" text="PO1. Engineering knowledge: Apply the knowledge of mathematics, science, engineeringfundamentals, and an engineering specialization to the solution of complex engineering problems." GridPane.rowIndex="5" />
                                     <TextArea fx:id="po1com5" prefHeight="200.0" prefWidth="200.0" promptText="Enter competency Here" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="dbtablename" promptText="Enter table Name" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                  </children>
                               </GridPane>
                            </children>
@@ -207,7 +210,7 @@
                   <Insets />
                </VBox.margin>
             </BorderPane>
-            <BorderPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="1900.0">
+<!--            <BorderPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="1900.0">
                <center>
                   <VBox prefHeight="225.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
@@ -1933,7 +1936,7 @@
                      </children>
                   </VBox>
                </center>
-            </BorderPane>
+            </BorderPane>-->
          </children>
       </VBox>
    </content>

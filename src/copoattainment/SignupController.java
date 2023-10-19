@@ -207,31 +207,26 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.scene.layout.Pane;
 import utils.ConnectionUtils;
 
 public class SignupController implements Initializable {
 
-    @FXML
     private TextField txtUsername;
-    @FXML
     private PasswordField txtPassword;
-    @FXML
-    private Button btnSignup;
-    @FXML
     private Label lblErrors;
-    @FXML
-    private Label lbl_close;
-    @FXML
     private TextField txtFirstName;
-    @FXML
-    private Button btnLogin;
-    @FXML
     private PasswordField txtConfirmPassword;
-    @FXML
     private TextField txtLastName;
 
     private Connection con = null;
     private PreparedStatement preparedStatement = null;
+    @FXML
+    private Button copotablelink;
+    @FXML
+    private Pane Table;
+    @FXML
+    private Pane Table2;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -239,7 +234,6 @@ public class SignupController implements Initializable {
         con = ConnectionUtils.conDB("copoattainment"); // Connect to a fixed database
     }
 
-    @FXML
     private void handleSignupButtonAction(MouseEvent event) {
         String firstName = txtFirstName.getText();
         String lastName = txtLastName.getText();
@@ -291,7 +285,6 @@ public class SignupController implements Initializable {
         lblErrors.setText(text);
     }
 
-    @FXML
     private void redirectToLogin(MouseEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
