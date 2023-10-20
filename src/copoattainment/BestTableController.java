@@ -155,35 +155,7 @@ public class BestTableController implements Initializable {
         this.username = username;
 //        lblUsername.setText("Welcome, " + username + "!");
     }
-    /**
-     * Initializes the controller class.
-     */
-      
-//// string for po's
-//    String program11, program12, program13, program14, program15;
-//String program21, program22, program23, program24, program25;
-//
-////  unique names  for competency
-//
-//String program1com1, program1com2, program1com3, program1com4, program1com5;
-//String program2com1, program2com2, program2com3, program2com4, program2com5;
-//
-////  unique names  for weights
-//String po1w1Value, po1w2Value, po1w3Value, po1w4Value, po1w5Value;
-//String po2w1Value, po2w2Value, po2w3Value, po2w4Value, po2w5Value;
     
-    
-//    String program11, program12, program13, program14, program15;
-//    String program1com1, program1com2, program1com3, program1com4, program1com5;
-//    String po1w1Value, po1w2Value, po1w3Value, po1w4Value, po1w5Value;
-//    String program1co11, program1co12, program1co13, program1co14, program1co15;
-//
-//    // For Program 2
-//    String program21, program22, program23, program24, program25;
-//    String program2com1, program2com2, program2com3, program2com4, program2com5;
-//    String po2w1Value, po2w2Value, po2w3Value, po2w4Value, po2w5Value;
-//    String program2co11, program2co12, program2co13, program2co14, program2co15;
-
     
     @FXML
     private void Add(ActionEvent event) {
@@ -562,8 +534,51 @@ alert.showAndWait();
     }
 
     @FXML
-    private void Update(ActionEvent event) {
+private void Update(ActionEvent event) {
+    try {
+        String tableName = dbtablename.getText();
+        Connection con = ConnectionUtils.conDB(ConnectionHolder.getConnectedDBName());
+
+        String updateQuery = "UPDATE " + ConnectionHolder.getConnectedDBName() + "." + tableName + " SET "
+                + "Competency = ?, Indicators = ?, Weight = ?, CO1 = ?, CO2 = ?, CO3 = ?, CO4 = ?, CO5 = ? "
+                + "WHERE PO = ?";
+
+        PreparedStatement pst = con.prepareStatement(updateQuery);
+
+        pst.setString(1, po1com1.getText());
+        pst.setString(2, po1ind1.getText());
+        pst.setString(3, po1w1.getText());
+        pst.setString(4, po1co11.getText());
+        pst.setString(5, po1co21.getText());
+        pst.setString(6, po1co31.getText());
+        pst.setString(7, po1co41.getText());
+        pst.setString(8, po1co51.getText());
+        pst.setString(9, po11.getText());
+
+        int rowsAffected = pst.executeUpdate();
+
+        if (rowsAffected > 0) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Update Successful");
+            alert.setHeaderText("Record Updated");
+            alert.setContentText("Record for PO " + po11.getText() + " has been updated.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Update Failed");
+            alert.setHeaderText("Record Not Found");
+            alert.setContentText("No record found for PO " + po11.getText());
+            alert.showAndWait();
+        }
+
+        con.close();
+
+    } catch (SQLException ex) {
+        Logger.getLogger(COPOTableController.class.getName()).log(Level.SEVERE, null, ex);
+        ex.printStackTrace();
     }
+}
+
 
     @FXML
 private void Mapping(ActionEvent event) {
@@ -639,42 +654,6 @@ PreparedStatement pst10;
     
         
 
-//    int myIndex;
-//    int id;
-//    public void Connect(){
-////         Connection userConnection = ConnectionHolder.getUserConnection();
-////        String connectedDBName = ConnectionHolder.getConnectedDBName();
-////        Connection userConnection = ConnectionHolder.getUserConnection();
-////        String connectedDBName = ConnectionHolder.getConnectedDBName();
-//
-//        Connection userConnection = ConnectionHolder.getUserConnection();
-//        String connectedDBName = ConnectionHolder.getConnectedDBName();
-//
-//
-//        try{
-//            Class.forName("com.mysql.jdbc.Driver");
-//            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/"+ connectedDBName, "root","");
-//            
-//            
-//        }catch(ClassNotFoundException ex){
-//            
-//        }
-//        catch(SQLException ex){
-//        ex.printStackTrace();
-//    }
-//            
-//            
-//    }
-//    
-//    
-//    
-    
-    
-//     @Override
-//    public void initialize(URL url, ResourceBundle rb) {
-//        // TODO
-//    } 
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          

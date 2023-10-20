@@ -15,6 +15,9 @@ package copoattainment;
     public static java.sql.Connection getUserConnection() {
         return userConnection;
     }
+    public static void setConnectedDBName(String dbName) {
+    connectedDBName = dbName;
+}
     
 
    public static void setUserConnection(java.sql.Connection connection, String dbName) {

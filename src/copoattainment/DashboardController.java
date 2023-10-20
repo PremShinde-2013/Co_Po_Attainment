@@ -31,6 +31,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Circle;
 import utils.ConnectionUtils;
 
 public class DashboardController implements Initializable {
@@ -48,6 +51,8 @@ public class DashboardController implements Initializable {
     @FXML
     private Pane downloadmain;
 
+    int numberOfTables = ConnectionUtils.getNumberOfTables(ConnectionHolder.getConnectedDBName());
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Set event handlers for buttons
@@ -58,7 +63,50 @@ public class DashboardController implements Initializable {
                 Table.setOnAction(event -> openCopotableWindow(event));
  int numberOfTables = ConnectionUtils.getNumberOfTables(ConnectionHolder.getConnectedDBName());
         System.out.println("Number of tables: " + numberOfTables);
+System.out.println("tablemain visibility: " + tablemain.isVisible());
+
+ for (int i = 0; i < numberOfTables; i++) {
+        Pane tablePane = createTablePane(i);
+        GridPane.setColumnIndex(tablePane, i % 2); // Adjust grid column index as needed
+        GridPane.setRowIndex(tablePane, i / 2);   // Adjust grid row index as needed
+        tablemain.getChildren().add(tablePane);
+    }
     }    
+    
+    private Pane createTablePane(int tableIndex) {
+    Pane pane = new Pane();
+    // Customize the properties of the pane as needed
+    pane.setPrefHeight(202.0);
+    pane.setPrefWidth(179.0);
+
+    Button button = new Button();
+    button.setMnemonicParsing(false);
+    button.setOpacity(0.7);
+    button.setPrefHeight(190.0);
+    button.setPrefWidth(168.0);
+    button.getStyleClass().add("button2");
+    button.getStylesheets().add("@../styling/fullstyling2.css"); // Add the stylesheet
+
+    // Set other properties for the button and add event handlers as needed
+
+        Circle circle = new Circle();
+    // Customize the properties of the circle as needed
+
+        ImageView imageView = new ImageView();
+    // Customize the properties of the image view and set the image
+
+    Label label = new Label();
+    // Customize the properties of the label and set the text
+
+    // Add button, circle, imageView, and label to the pane
+
+    return pane;
+}
+    
+    
+    
+    
+    
     
      private void openCopotableWindow(ActionEvent event) {
         try {

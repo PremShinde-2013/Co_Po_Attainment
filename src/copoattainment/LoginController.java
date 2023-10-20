@@ -336,6 +336,8 @@ Connection userConnection = ConnectionUtils.conDB(dbName);
                         status = "Error";
                     } else {
                         setLblError(Color.GREEN, "Login Successful..Redirecting..");
+                           // Set the connected database name
+            ConnectionHolder.setConnectedDBName(dbName);
                     }
                 } catch (SQLException ex) {
                     System.err.println(ex.getMessage());

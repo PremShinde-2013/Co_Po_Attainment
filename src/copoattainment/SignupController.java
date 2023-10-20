@@ -269,6 +269,9 @@ public class SignupController implements Initializable {
                     setLblError("User registered successfully");
                     // Redirect to login page
                     redirectToLogin(event);
+                    
+                    // Set the connected database name
+            ConnectionHolder.setConnectedDBName(dbName);
                 } else {
                     setLblError("Error registering user");
                 }
