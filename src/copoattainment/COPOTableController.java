@@ -4,6 +4,7 @@
  */
 package copoattainment;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -17,11 +18,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import utils.ConnectionUtils;
 
 
@@ -125,10 +131,6 @@ public class COPOTableController implements Initializable {
     @FXML
     private Button btnAdd;
     @FXML
-    private Button btndelete;
-    @FXML
-    private Button btnupdate;
-    @FXML
     private Button btnmapping;
     @FXML
     private TextArea po11;
@@ -142,401 +144,797 @@ public class COPOTableController implements Initializable {
     private TextArea po15;
     @FXML
     private TextArea po1com5;
+    @FXML
     private TextField po2w1;
+    @FXML
     private TextField po2w2;
+    @FXML
     private TextField po2w3;
+    @FXML
     private TextField po2w4;
+    @FXML
     private TextField po2w5;
+    @FXML
     private TextField po2co11;
+    @FXML
     private TextField po2co12;
+    @FXML
     private TextField po2co13;
+    @FXML
     private TextField po2co14;
+    @FXML
     private TextField po2co15;
+    @FXML
     private TextField po2co21;
+    @FXML
     private TextField po2co22;
+    @FXML
     private TextField po2co23;
+    @FXML
     private TextField po2co24;
+    @FXML
     private TextField po2co25;
+    @FXML
     private TextField po2co31;
+    @FXML
     private TextField po2co33;
+    @FXML
     private TextField po2co32;
+    @FXML
     private TextField po2co34;
+    @FXML
     private TextField po2co35;
+    @FXML
     private TextField po2co41;
+    @FXML
     private TextField po2co42;
+    @FXML
     private TextField po2co43;
+    @FXML
     private TextField po2co44;
+    @FXML
     private TextField po2co45;
+    @FXML
     private TextField po2co51;
+    @FXML
     private TextField po2co52;
+    @FXML
     private TextField po2co53;
+    @FXML
     private TextField po2co54;
+    @FXML
     private TextField po2co55;
+    @FXML
     private TextField po2wtotal;
+    @FXML
     private TextField po2co1total;
+    @FXML
     private TextField po2co2total;
+    @FXML
     private TextField po2co3total;
+    @FXML
     private TextField po2co4total;
+    @FXML
     private TextField po2co5total;
+    @FXML
     private TextField po3w1;
+    @FXML
     private TextField po3w2;
+    @FXML
     private TextField po3w3;
+    @FXML
     private TextField po3w4;
+    @FXML
     private TextField po3w5;
+    @FXML
     private TextField po3co11;
+    @FXML
     private TextField po3co12;
+    @FXML
     private TextField po3co13;
+    @FXML
     private TextField po3co14;
+    @FXML
     private TextField po3co15;
+    @FXML
     private TextField po3co21;
+    @FXML
     private TextField po3co22;
+    @FXML
     private TextField po3co23;
+    @FXML
     private TextField po3co24;
+    @FXML
     private TextField po3co25;
+    @FXML
     private TextField po3co31;
+    @FXML
     private TextField po3co33;
+    @FXML
     private TextField po3co32;
+    @FXML
     private TextField po3co34;
+    @FXML
     private TextField po3co35;
+    @FXML
     private TextField po3co41;
+    @FXML
     private TextField po3co42;
+    @FXML
     private TextField po3co43;
+    @FXML
     private TextField po3co44;
+    @FXML
     private TextField po3co45;
+    @FXML
     private TextField po3co51;
+    @FXML
     private TextField po3co52;
+    @FXML
     private TextField po3co53;
+    @FXML
     private TextField po3co54;
+    @FXML
     private TextField po3co55;
+    @FXML
     private TextField po3wtotal;
+    @FXML
     private TextField po3co1total;
+    @FXML
     private TextField po3co2total;
+    @FXML
     private TextField po3co3total;
+    @FXML
     private TextField po3co4total;
+    @FXML
     private TextField po3co5total;
+    @FXML
     private TextField po4w1;
+    @FXML
     private TextField po4w2;
+    @FXML
     private TextField po4w3;
+    @FXML
     private TextField po4w4;
+    @FXML
     private TextField po4w5;
+    @FXML
     private TextField po4co11;
+    @FXML
     private TextField po4co12;
+    @FXML
     private TextField po4co13;
+    @FXML
     private TextField po4co14;
+    @FXML
     private TextField po4co15;
+    @FXML
     private TextField po4co21;
+    @FXML
     private TextField po4co22;
+    @FXML
     private TextField po4co23;
+    @FXML
     private TextField po4co24;
+    @FXML
     private TextField po4co25;
+    @FXML
     private TextField po4co31;
+    @FXML
     private TextField po4co33;
+    @FXML
     private TextField po4co32;
+    @FXML
     private TextField po4co34;
+    @FXML
     private TextField po4co35;
+    @FXML
     private TextField po4co41;
+    @FXML
     private TextField po4co42;
+    @FXML
     private TextField po4co43;
+    @FXML
     private TextField po4co44;
+    @FXML
     private TextField po4co45;
+    @FXML
     private TextField po4co51;
+    @FXML
     private TextField po4co52;
+    @FXML
     private TextField po4co53;
+    @FXML
     private TextField po4co54;
+    @FXML
     private TextField po4co55;
+    @FXML
     private TextField po4wtotal;
+    @FXML
     private TextField po4co1total;
+    @FXML
     private TextField po4co2total;
+    @FXML
     private TextField po4co3total;
+    @FXML
     private TextField po4co4total;
+    @FXML
     private TextField po4co5total;
+    @FXML
     private TextField po5w1;
+    @FXML
     private TextField po5w2;
+    @FXML
     private TextField po5w3;
+    @FXML
     private TextField po5w4;
+    @FXML
     private TextField po5w5;
+    @FXML
     private TextField po5co11;
+    @FXML
     private TextField po5co12;
+    @FXML
     private TextField po5co13;
+    @FXML
     private TextField po5co14;
+    @FXML
     private TextField po5co15;
+    @FXML
     private TextField po5co21;
+    @FXML
     private TextField po5co22;
+    @FXML
     private TextField po5co23;
+    @FXML
     private TextField po5co24;
+    @FXML
     private TextField po5co25;
+    @FXML
     private TextField po5co31;
+    @FXML
     private TextField po5co33;
+    @FXML
     private TextField po5co32;
+    @FXML
     private TextField po5co34;
+    @FXML
     private TextField po5co35;
+    @FXML
     private TextField po5co41;
+    @FXML
     private TextField po5co42;
+    @FXML
     private TextField po5co43;
+    @FXML
     private TextField po5co44;
+    @FXML
     private TextField po5co45;
+    @FXML
     private TextField po5co51;
+    @FXML
     private TextField po5co52;
+    @FXML
     private TextField po5co53;
+    @FXML
     private TextField po5co54;
+    @FXML
     private TextField po5co55;
+    @FXML
     private TextField po5wtotal;
+    @FXML
     private TextField po5co1total;
+    @FXML
     private TextField po5co2total;
+    @FXML
     private TextField po5co3total;
+    @FXML
     private TextField po5co4total;
+    @FXML
     private TextField po5co5total;
+    @FXML
     private TextField po6w1;
+    @FXML
     private TextField po6w2;
+    @FXML
     private TextField po6w3;
+    @FXML
     private TextField po6w4;
+    @FXML
     private TextField po6w5;
+    @FXML
     private TextField po6co11;
+    @FXML
     private TextField po6co12;
+    @FXML
     private TextField po6co13;
+    @FXML
     private TextField po6co14;
+    @FXML
     private TextField po6co15;
+    @FXML
     private TextField po6co21;
+    @FXML
     private TextField po6co22;
+    @FXML
     private TextField po6co23;
+    @FXML
     private TextField po6co24;
+    @FXML
     private TextField po6co25;
+    @FXML
     private TextField po6co31;
+    @FXML
     private TextField po6co33;
+    @FXML
     private TextField po6co32;
+    @FXML
     private TextField po6co34;
+    @FXML
     private TextField po6co35;
+    @FXML
     private TextField po6co41;
+    @FXML
     private TextField po6co42;
+    @FXML
     private TextField po6co43;
+    @FXML
     private TextField po6co44;
+    @FXML
     private TextField po6co45;
+    @FXML
     private TextField po6co51;
+    @FXML
     private TextField po6co52;
+    @FXML
     private TextField po6co53;
+    @FXML
     private TextField po6co54;
+    @FXML
     private TextField po6co55;
+    @FXML
     private TextField po6wtotal;
+    @FXML
     private TextField po6co1total;
+    @FXML
     private TextField po6co2total;
+    @FXML
     private TextField po6co3total;
+    @FXML
     private TextField po6co4total;
+    @FXML
     private TextField po6co5total;
+    @FXML
     private TextField po7w1;
+    @FXML
     private TextField po7w2;
+    @FXML
     private TextField po7w3;
+    @FXML
     private TextField po7w4;
+    @FXML
     private TextField po7w5;
+    @FXML
     private TextField po7co11;
+    @FXML
     private TextField po7co12;
+    @FXML
     private TextField po7co13;
+    @FXML
     private TextField po7co14;
+    @FXML
     private TextField po7co15;
+    @FXML
     private TextField po7co21;
+    @FXML
     private TextField po7co22;
+    @FXML
     private TextField po7co23;
+    @FXML
     private TextField po7co24;
+    @FXML
     private TextField po7co25;
+    @FXML
     private TextField po7co31;
+    @FXML
     private TextField po7co33;
+    @FXML
     private TextField po7co32;
+    @FXML
     private TextField po7co34;
+    @FXML
     private TextField po7co35;
+    @FXML
     private TextField po7co41;
+    @FXML
     private TextField po7co42;
+    @FXML
     private TextField po7co43;
+    @FXML
     private TextField po7co44;
+    @FXML
     private TextField po7co45;
+    @FXML
     private TextField po7co51;
+    @FXML
     private TextField po7co52;
+    @FXML
     private TextField po7co53;
+    @FXML
     private TextField po7co54;
+    @FXML
     private TextField po7co55;
+    @FXML
     private TextField po7wtotal;
+    @FXML
     private TextField po7co1total;
+    @FXML
     private TextField po7co2total;
+    @FXML
     private TextField po7co3total;
+    @FXML
     private TextField po7co4total;
+    @FXML
     private TextField po7co5total;
+    @FXML
     private TextField po8w1;
+    @FXML
     private TextField po8w2;
+    @FXML
     private TextField po8w3;
+    @FXML
     private TextField po8w4;
+    @FXML
     private TextField po8w5;
+    @FXML
     private TextField po8co11;
+    @FXML
     private TextField po8co12;
+    @FXML
     private TextField po8co13;
+    @FXML
     private TextField po8co14;
+    @FXML
     private TextField po8co15;
+    @FXML
     private TextField po8co21;
+    @FXML
     private TextField po8co22;
+    @FXML
     private TextField po8co23;
+    @FXML
     private TextField po8co24;
+    @FXML
     private TextField po8co25;
+    @FXML
     private TextField po8co31;
+    @FXML
     private TextField po8co33;
+    @FXML
     private TextField po8co32;
+    @FXML
     private TextField po8co34;
+    @FXML
     private TextField po8co35;
+    @FXML
     private TextField po8co41;
+    @FXML
     private TextField po8co42;
+    @FXML
     private TextField po8co43;
+    @FXML
     private TextField po8co44;
+    @FXML
     private TextField po8co45;
+    @FXML
     private TextField po8co51;
+    @FXML
     private TextField po8co52;
+    @FXML
     private TextField po8co53;
+    @FXML
     private TextField po8co54;
+    @FXML
     private TextField po8co55;
+    @FXML
     private TextField po8wtotal;
+    @FXML
     private TextField po8co1total;
+    @FXML
     private TextField po8co2total;
+    @FXML
     private TextField po8co3total;
+    @FXML
     private TextField po8co4total;
+    @FXML
     private TextField po8co5total;
+    @FXML
     private TextField po9w1;
+    @FXML
     private TextField po9w2;
+    @FXML
     private TextField po9w3;
+    @FXML
     private TextField po9w4;
+    @FXML
     private TextField po9w5;
+    @FXML
     private TextField po9co11;
+    @FXML
     private TextField po9co12;
+    @FXML
     private TextField po9co13;
+    @FXML
     private TextField po9co14;
+    @FXML
     private TextField po9co15;
+    @FXML
     private TextField po9co21;
+    @FXML
     private TextField po9co22;
+    @FXML
     private TextField po9co23;
+    @FXML
     private TextField po9co24;
+    @FXML
     private TextField po9co25;
+    @FXML
     private TextField po9co31;
+    @FXML
     private TextField po9co33;
+    @FXML
     private TextField po9co32;
+    @FXML
     private TextField po9co34;
+    @FXML
     private TextField po9co35;
+    @FXML
     private TextField po9co41;
+    @FXML
     private TextField po9co42;
+    @FXML
     private TextField po9co43;
+    @FXML
     private TextField po9co44;
+    @FXML
     private TextField po9co45;
+    @FXML
     private TextField po9co51;
+    @FXML
     private TextField po9co52;
+    @FXML
     private TextField po9co53;
+    @FXML
     private TextField po9co54;
+    @FXML
     private TextField po9co55;
+    @FXML
     private TextField po9wtotal;
+    @FXML
     private TextField po9co1total;
+    @FXML
     private TextField po9co2total;
+    @FXML
     private TextField po9co3total;
+    @FXML
     private TextField po9co4total;
+    @FXML
     private TextField po9co5total;
+    @FXML
     private TextField po10w1;
+    @FXML
     private TextField po10w2;
+    @FXML
     private TextField po10w3;
+    @FXML
     private TextField po10w4;
+    @FXML
     private TextField po10w5;
+    @FXML
     private TextField po10co11;
+    @FXML
     private TextField po10co12;
+    @FXML
     private TextField po10co13;
+    @FXML
     private TextField po10co14;
+    @FXML
     private TextField po10co15;
+    @FXML
     private TextField po10co21;
+    @FXML
     private TextField po10co22;
+    @FXML
     private TextField po10co23;
+    @FXML
     private TextField po10co24;
+    @FXML
     private TextField po10co25;
+    @FXML
     private TextField po10co31;
+    @FXML
     private TextField po10co33;
+    @FXML
     private TextField po10co32;
+    @FXML
     private TextField po10co34;
+    @FXML
     private TextField po10co35;
+    @FXML
     private TextField po10co41;
+    @FXML
     private TextField po10co42;
+    @FXML
     private TextField po10co43;
+    @FXML
     private TextField po10co44;
+    @FXML
     private TextField po10co45;
+    @FXML
     private TextField po10co51;
+    @FXML
     private TextField po10co52;
+    @FXML
     private TextField po10co53;
+    @FXML
     private TextField po10co54;
+    @FXML
     private TextField po10co55;
+    @FXML
     private TextField po10wtotal;
+    @FXML
     private TextField po10co1total;
+    @FXML
     private TextField po10co2total;
+    @FXML
     private TextField po10co3total;
+    @FXML
     private TextField po10co4total;
+    @FXML
     private TextField po10co5total;
+    @FXML
     private TextField po11w1;
+    @FXML
     private TextField po11w2;
+    @FXML
     private TextField po11w3;
+    @FXML
     private TextField po11w4;
+    @FXML
     private TextField po11w5;
+    @FXML
     private TextField po11co11;
+    @FXML
     private TextField po11co12;
+    @FXML
     private TextField po11co13;
+    @FXML
     private TextField po11co14;
+    @FXML
     private TextField po11co15;
+    @FXML
     private TextField po11co21;
+    @FXML
     private TextField po11co22;
+    @FXML
     private TextField po11co23;
+    @FXML
     private TextField po11co24;
+    @FXML
     private TextField po11co25;
+    @FXML
     private TextField po11co31;
+    @FXML
     private TextField po11co33;
+    @FXML
     private TextField po11co32;
+    @FXML
     private TextField po11co34;
+    @FXML
     private TextField po11co35;
+    @FXML
     private TextField po11co41;
+    @FXML
     private TextField po11co42;
+    @FXML
     private TextField po11co43;
+    @FXML
     private TextField po11co44;
+    @FXML
     private TextField po11co45;
+    @FXML
     private TextField po11co51;
+    @FXML
     private TextField po11co52;
+    @FXML
     private TextField po11co53;
+    @FXML
     private TextField po11co54;
+    @FXML
     private TextField po11co55;
+    @FXML
     private TextField po11wtotal;
+    @FXML
     private TextField po11co1total;
+    @FXML
     private TextField po11co2total;
+    @FXML
     private TextField po11co3total;
+    @FXML
     private TextField po11co4total;
+    @FXML
     private TextField po11co5total;
+    @FXML
     private TextField po12w1;
+    @FXML
     private TextField po12w2;
+    @FXML
     private TextField po12w3;
+    @FXML
     private TextField po12w4;
+    @FXML
     private TextField po12w5;
+    @FXML
     private TextField po12co11;
+    @FXML
     private TextField po12co12;
+    @FXML
     private TextField po12co13;
+    @FXML
     private TextField po12co14;
+    @FXML
     private TextField po12co15;
+    @FXML
     private TextField po12co21;
+    @FXML
     private TextField po12co22;
+    @FXML
     private TextField po12co23;
+    @FXML
     private TextField po12co24;
+    @FXML
     private TextField po12co25;
+    @FXML
     private TextField po12co31;
+    @FXML
     private TextField po12co33;
+    @FXML
     private TextField po12co32;
+    @FXML
     private TextField po12co34;
+    @FXML
     private TextField po12co35;
+    @FXML
     private TextField po12co41;
+    @FXML
     private TextField po12co42;
+    @FXML
     private TextField po12co43;
+    @FXML
     private TextField po12co44;
+    @FXML
     private TextField po12co45;
+    @FXML
     private TextField po12co51;
+    @FXML
     private TextField po12co52;
+    @FXML
     private TextField po12co53;
+    @FXML
     private TextField po12co54;
+    @FXML
     private TextField po12co55;
+    @FXML
     private TextField po12wtotal;
+    @FXML
     private TextField po12co1total;
+    @FXML
     private TextField po12co2total;
+    @FXML
     private TextField po12co3total;
+    @FXML
     private TextField po12co4total;
+    @FXML
     private TextField po12co5total;
     
     @FXML
@@ -545,6 +943,348 @@ public class COPOTableController implements Initializable {
     
     
      private String username;
+    @FXML
+    private TextArea po2com1;
+    @FXML
+    private TextArea po2com2;
+    @FXML
+    private TextArea po2com3;
+    @FXML
+    private TextArea po2com4;
+    @FXML
+    private TextArea po2ind1;
+    @FXML
+    private TextArea po2ind2;
+    @FXML
+    private TextArea po2ind3;
+    @FXML
+    private TextArea po2ind4;
+    @FXML
+    private TextArea po2ind5;
+    @FXML
+    private TextArea po21;
+    @FXML
+    private TextArea po22;
+    @FXML
+    private TextArea po23;
+    @FXML
+    private TextArea po24;
+    @FXML
+    private TextArea po25;
+    @FXML
+    private TextArea po2com5;
+    @FXML
+    private TextArea po3com1;
+    @FXML
+    private TextArea po3com2;
+    @FXML
+    private TextArea po3com3;
+    @FXML
+    private TextArea po3com4;
+    @FXML
+    private TextArea po3ind1;
+    @FXML
+    private TextArea po3ind2;
+    @FXML
+    private TextArea po3ind3;
+    @FXML
+    private TextArea po3ind4;
+    @FXML
+    private TextArea po3ind5;
+    @FXML
+    private TextArea po31;
+    @FXML
+    private TextArea po32;
+    @FXML
+    private TextArea po33;
+    @FXML
+    private TextArea po34;
+    @FXML
+    private TextArea po35;
+    @FXML
+    private TextArea po3com5;
+    @FXML
+    private TextArea po4com1;
+    @FXML
+    private TextArea po4com2;
+    @FXML
+    private TextArea po4com3;
+    @FXML
+    private TextArea po4com4;
+    @FXML
+    private TextArea po4ind1;
+    @FXML
+    private TextArea po4ind2;
+    @FXML
+    private TextArea po4ind3;
+    @FXML
+    private TextArea po4ind4;
+    @FXML
+    private TextArea po4ind5;
+    @FXML
+    private TextArea po41;
+    @FXML
+    private TextArea po42;
+    @FXML
+    private TextArea po43;
+    @FXML
+    private TextArea po44;
+    @FXML
+    private TextArea po45;
+    @FXML
+    private TextArea po4com5;
+    @FXML
+    private TextArea po5com1;
+    @FXML
+    private TextArea po5com2;
+    @FXML
+    private TextArea po5com3;
+    @FXML
+    private TextArea po5com4;
+    @FXML
+    private TextArea po5ind1;
+    @FXML
+    private TextArea po5ind2;
+    @FXML
+    private TextArea po5ind3;
+    @FXML
+    private TextArea po5ind4;
+    @FXML
+    private TextArea po5ind5;
+    @FXML
+    private TextArea po51;
+    @FXML
+    private TextArea po52;
+    @FXML
+    private TextArea po53;
+    @FXML
+    private TextArea po54;
+    @FXML
+    private TextArea po55;
+    @FXML
+    private TextArea po5com5;
+    @FXML
+    private TextArea po6com1;
+    @FXML
+    private TextArea po6com2;
+    @FXML
+    private TextArea po6com3;
+    @FXML
+    private TextArea po6com4;
+    @FXML
+    private TextArea po6ind1;
+    @FXML
+    private TextArea po6ind2;
+    @FXML
+    private TextArea po6ind3;
+    @FXML
+    private TextArea po6ind4;
+    @FXML
+    private TextArea po6ind5;
+    @FXML
+    private TextArea po61;
+    @FXML
+    private TextArea po62;
+    @FXML
+    private TextArea po63;
+    @FXML
+    private TextArea po64;
+    @FXML
+    private TextArea po65;
+    @FXML
+    private TextArea po6com5;
+    @FXML
+    private TextArea po7com1;
+    @FXML
+    private TextArea po7com2;
+    @FXML
+    private TextArea po7com3;
+    @FXML
+    private TextArea po7com4;
+    @FXML
+    private TextArea po7ind1;
+    @FXML
+    private TextArea po7ind2;
+    @FXML
+    private TextArea po7ind3;
+    @FXML
+    private TextArea po7ind4;
+    @FXML
+    private TextArea po7ind5;
+    @FXML
+    private TextArea po71;
+    @FXML
+    private TextArea po72;
+    @FXML
+    private TextArea po73;
+    @FXML
+    private TextArea po74;
+    @FXML
+    private TextArea po75;
+    @FXML
+    private TextArea po7com5;
+    @FXML
+    private TextArea po8com1;
+    @FXML
+    private TextArea po8com2;
+    @FXML
+    private TextArea po8com3;
+    @FXML
+    private TextArea po8com4;
+    @FXML
+    private TextArea po8ind1;
+    @FXML
+    private TextArea po8ind2;
+    @FXML
+    private TextArea po8ind3;
+    @FXML
+    private TextArea po8ind4;
+    @FXML
+    private TextArea po8ind5;
+    @FXML
+    private TextArea po81;
+    @FXML
+    private TextArea po82;
+    @FXML
+    private TextArea po83;
+    @FXML
+    private TextArea po84;
+    @FXML
+    private TextArea po85;
+    @FXML
+    private TextArea po8com5;
+    @FXML
+    private TextArea po9com1;
+    @FXML
+    private TextArea po9com2;
+    @FXML
+    private TextArea po9com3;
+    @FXML
+    private TextArea po9com4;
+    @FXML
+    private TextArea po9ind1;
+    @FXML
+    private TextArea po9ind2;
+    @FXML
+    private TextArea po9ind3;
+    @FXML
+    private TextArea po9ind4;
+    @FXML
+    private TextArea po9ind5;
+    @FXML
+    private TextArea po91;
+    @FXML
+    private TextArea po92;
+    @FXML
+    private TextArea po93;
+    @FXML
+    private TextArea po94;
+    @FXML
+    private TextArea po95;
+    @FXML
+    private TextArea po9com5;
+    @FXML
+    private TextArea po10com1;
+    @FXML
+    private TextArea po10com2;
+    @FXML
+    private TextArea po10com3;
+    @FXML
+    private TextArea po10com4;
+    @FXML
+    private TextArea po10ind1;
+    @FXML
+    private TextArea po10ind2;
+    @FXML
+    private TextArea po10ind3;
+    @FXML
+    private TextArea po10ind4;
+    @FXML
+    private TextArea po10ind5;
+    @FXML
+    private TextArea po101;
+    @FXML
+    private TextArea po102;
+    @FXML
+    private TextArea po103;
+    @FXML
+    private TextArea po104;
+    @FXML
+    private TextArea po105;
+    @FXML
+    private TextArea po10com5;
+    @FXML
+    private TextArea po11com1;
+    @FXML
+    private TextArea po11com2;
+    @FXML
+    private TextArea po11com3;
+    @FXML
+    private TextArea po11com4;
+    @FXML
+    private TextArea po11ind1;
+    @FXML
+    private TextArea po11ind2;
+    @FXML
+    private TextArea po11ind3;
+    @FXML
+    private TextArea po11ind4;
+    @FXML
+    private TextArea po11ind5;
+    @FXML
+    private TextArea po111;
+    @FXML
+    private TextArea po112;
+    @FXML
+    private TextArea po113;
+    @FXML
+    private TextArea po114;
+    @FXML
+    private TextArea po115;
+    @FXML
+    private TextArea po11com5;
+    @FXML
+    private TextArea po12com1;
+    @FXML
+    private TextArea po12com2;
+    @FXML
+    private TextArea po12com3;
+    @FXML
+    private TextArea po12com4;
+    @FXML
+    private TextArea po12ind1;
+    @FXML
+    private TextArea po12ind2;
+    @FXML
+    private TextArea po12ind3;
+    @FXML
+    private TextArea po12ind4;
+    @FXML
+    private TextArea po12ind5;
+    @FXML
+    private TextArea po121;
+    @FXML
+    private TextArea po122;
+    @FXML
+    private TextArea po123;
+    @FXML
+    private TextArea po124;
+    @FXML
+    private TextArea po125;
+    @FXML
+    private TextArea po12com5;
+    @FXML
+    private Button redirectDash;
+    @FXML
+    private Button redirectDownload;
+    @FXML
+    private Button redirectLogout;
+    @FXML
+    private Button btnmappingtrue;
+    @FXML
+    private TextField dbtablenametrue;
+    @FXML
+    private Button btnAddToDatabase;
 
 //     get username while login
       public void setUsername(String username) {
@@ -582,7 +1322,9 @@ public class COPOTableController implements Initializable {
 
     
     @FXML
-    private void Add(ActionEvent event) {
+//    private void btnAddToDatabase(ActionEvent event) {
+            private void Add(ActionEvent event) {
+
         
         
     String program11, program12, program13, program14, program15;
@@ -781,7 +1523,7 @@ program1co53 = po1co53.getText();
 program1co54 = po1co54.getText();
 program1co55 = po1co55.getText();
 program1co5total = po1co5total.getText();
-//
+
 ////  for program 2
 //program21 = po21.getText();
 //program22 = po22.getText();
@@ -1457,7 +2199,7 @@ program1co5total = po1co5total.getText();
 //        program12co54 = po12co54.getText();
 //        program12co55 = po12co55.getText();
 //        program12co5total = po12co5total.getText();
-        
+//        
         
          databasetableName = dbtablename.getText(); 
 
@@ -2493,13 +3235,6 @@ alert.showAndWait();
         
     }
 
-    @FXML
-    private void Delete(ActionEvent event) {
-    }
-
-    @FXML
-    private void Update(ActionEvent event) {
-    }
 
     @FXML
 private void Mapping(ActionEvent event) {
@@ -3293,4 +4028,60 @@ po8co5total.setText(String.valueOf(TotalCo5_8));
         }
     }    
 //    
+
+    @FXML
+    private void handleRedirectDash(ActionEvent event) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+                    Parent root = loader.load();
+                    Stage stage = new Stage();
+            stage.setTitle("Dashboard");
+            stage.setScene(new Scene(root, 1000, 800));
+//                            stage.setScene(Scene);
+
+            stage.show();
+
+            // Close the current stage (window)
+            Stage currentStage = (Stage) redirectDash.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    private void handleRedirectDownload(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleRedirectLogout(ActionEvent event) {
+          try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Login");
+            stage.setScene(new Scene(root, 1000, 800));
+            stage.show();
+
+            // Close the current stage (window)
+            Stage currentStage = (Stage) redirectLogout.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void btnAddToDatabase (ActionEvent event) {
+//            private void Add (ActionEvent event) {
+
+    }
+      public void initialize() {
+        redirectDash.setCursor(Cursor.HAND);
+                redirectDownload.setCursor(Cursor.HAND);
+
+                        redirectLogout.setCursor(Cursor.HAND);
+
+    }
 }

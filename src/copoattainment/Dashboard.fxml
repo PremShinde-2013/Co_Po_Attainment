@@ -18,14 +18,14 @@
 
 <!--<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.SignupController">-->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.DashboardController">
 
     <children>
-      <AnchorPane prefHeight="519.0" prefWidth="262.0" style="-fx-background-color: #393351;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="519.0" prefWidth="262.0" style="-fx-background-color: #dddcde;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox layoutY="160.0" prefHeight="356.0" prefWidth="262.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="160.0">
                <children>
-                  <Button fx:id="btncopotable" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="CO PO Attainment Table" textFill="WHITE">
+                  <Button fx:id="btncopotable" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="CO PO Attainment Table">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -39,7 +39,7 @@
                      <padding>
                         <Insets left="40.0" />
                      </padding></Button>
-                  <Button fx:id="btndownload" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="Mapping Of CO's &amp; PO's" textFill="WHITE">
+                  <Button fx:id="btndownload" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="Download">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -51,11 +51,11 @@
                         <Insets left="40.0" />
                      </padding>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="Graphs" textFill="WHITE">
+                  <Button fx:id="alltables" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="totaltable">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/profile-adam-levine.png" />
+                              <Image url="@../resources/ic_usr.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -63,7 +63,7 @@
                         <Insets left="40.0" />
                      </padding>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="PO's" textFill="WHITE">
+                  <Button fx:id="Logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#logoutbtn" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="Logout">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -77,7 +77,7 @@
                   </Button>
                </children>
             </VBox>
-            <Pane layoutY="86.0" prefHeight="61.0" prefWidth="262.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+            <Pane layoutY="86.0" prefHeight="61.0" prefWidth="262.0" style="-fx-background-color: #3d3d3d; -fx-background-radius: 5;">
                <children>
                   <Label layoutX="25.0" layoutY="17.0" text="CO PO Attainment" textFill="WHITE">
                      <font>
@@ -95,9 +95,15 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Pane fx:id="tablemain" prefHeight="649.0" prefWidth="631.0">
+            <Pane fx:id="table1" layoutX="10.0" layoutY="10.0" prefHeight="649.0" prefWidth="631.0">
                <children>
-                  <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+                  <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #3d3d3d; -fx-background-radius: 70;" />
+                  <Button fx:id="downloadButton" layoutX="90.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleDownloadButton" prefHeight="94.0" prefWidth="138.0" text="Button" />
+               </children>
+            </Pane>
+            <Pane fx:id="tabletotal" prefHeight="649.0" prefWidth="631.0">
+               <children>
+                  <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #3d3d3d; -fx-background-radius: 70;" />
                   <Pane layoutX="76.0" layoutY="106.0">
                      <children>
                         <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
@@ -277,9 +283,9 @@
                   </Pane>
                </children>
             </Pane>
-            <Pane fx:id="downloadmain" prefHeight="649.0" prefWidth="631.0">
+            <Pane fx:id="table" prefHeight="649.0" prefWidth="631.0">
                <children>
-                  <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+                  <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #3d3d3d; -fx-background-radius: 70;" />
                   <Pane layoutX="76.0" layoutY="106.0">
                      <children>
                         <Button fx:id="Table" mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
@@ -301,9 +307,9 @@
                               </LinearGradient>
                            </fill>
                         </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="54.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/icons8_Block_50px_1.png" />
+                              <Image url="@../images/table.png" />
                            </image>
                         </ImageView>
                         <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="17.0" prefWidth="174.0" text="Table" textFill="WHITE">
@@ -334,9 +340,9 @@
                               </LinearGradient>
                            </fill>
                         </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="54.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/icons8_Car_52px_2.png" />
+                              <Image url="@../images/table.png" />
                            </image>
                         </ImageView>
                         <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Table2" textFill="WHITE">

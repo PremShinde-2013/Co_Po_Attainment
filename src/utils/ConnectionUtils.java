@@ -88,23 +88,22 @@ public class ConnectionUtils {
             return null;
         }
     }
-      public static int getNumberOfTables(String dbName) {
+  public static void getTablesInfo(String dbName) {
     try (Connection con = conDB(dbName)) {
         DatabaseMetaData metaData = con.getMetaData();
         ResultSet tables = metaData.getTables(null, null, "%", new String[] { "TABLE" });
 
-        int count = 0;
         while (tables.next()) {
-            count++;
-        }
+            String tableName = tables.getString("TABLE_NAME");
+            String schemaName = tables.getString("TABLE_SCHEM");
 
-        return count;
+            System.out.println("Schema: " + schemaName + ", Table: " + tableName);
+        }
     } catch (SQLException e) {
         e.printStackTrace();
-        return -1; // Return -1 to indicate an error
     }
-
 }
+
 
 
     public static Connection createNewDatabase(String dbName) {

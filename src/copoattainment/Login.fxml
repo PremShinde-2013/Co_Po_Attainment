@@ -12,12 +12,13 @@
 <?import javafx.scene.text.Font?>
 
 <!--<AnchorPane id="AnchorPane" onMousePressed="#handleButtonAction" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.LoginController">-->
-   <AnchorPane id="AnchorPane" onMousePressed="#handleButtonAction" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="copoattainment.LoginController">
+
+<AnchorPane id="AnchorPane" onMousePressed="#handleButtonAction" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="copoattainment.LoginController">
 
     <children>
         <AnchorPane prefHeight="503.0" prefWidth="382.0" style="-fx-background-color: #700070;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <ImageView fitHeight="68.0" fitWidth="382.0" layoutX="1.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="64.0" fitWidth="373.0" layoutX="1.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../images/Dnyanshree-logo.png" />
                     </image>
