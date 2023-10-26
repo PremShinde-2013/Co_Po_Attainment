@@ -25,10 +25,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import utils.ConnectionUtils;
+import java.util.Arrays;
 
 
 /**
@@ -144,798 +146,6 @@ public class COPOTableController implements Initializable {
     private TextArea po15;
     @FXML
     private TextArea po1com5;
-    @FXML
-    private TextField po2w1;
-    @FXML
-    private TextField po2w2;
-    @FXML
-    private TextField po2w3;
-    @FXML
-    private TextField po2w4;
-    @FXML
-    private TextField po2w5;
-    @FXML
-    private TextField po2co11;
-    @FXML
-    private TextField po2co12;
-    @FXML
-    private TextField po2co13;
-    @FXML
-    private TextField po2co14;
-    @FXML
-    private TextField po2co15;
-    @FXML
-    private TextField po2co21;
-    @FXML
-    private TextField po2co22;
-    @FXML
-    private TextField po2co23;
-    @FXML
-    private TextField po2co24;
-    @FXML
-    private TextField po2co25;
-    @FXML
-    private TextField po2co31;
-    @FXML
-    private TextField po2co33;
-    @FXML
-    private TextField po2co32;
-    @FXML
-    private TextField po2co34;
-    @FXML
-    private TextField po2co35;
-    @FXML
-    private TextField po2co41;
-    @FXML
-    private TextField po2co42;
-    @FXML
-    private TextField po2co43;
-    @FXML
-    private TextField po2co44;
-    @FXML
-    private TextField po2co45;
-    @FXML
-    private TextField po2co51;
-    @FXML
-    private TextField po2co52;
-    @FXML
-    private TextField po2co53;
-    @FXML
-    private TextField po2co54;
-    @FXML
-    private TextField po2co55;
-    @FXML
-    private TextField po2wtotal;
-    @FXML
-    private TextField po2co1total;
-    @FXML
-    private TextField po2co2total;
-    @FXML
-    private TextField po2co3total;
-    @FXML
-    private TextField po2co4total;
-    @FXML
-    private TextField po2co5total;
-    @FXML
-    private TextField po3w1;
-    @FXML
-    private TextField po3w2;
-    @FXML
-    private TextField po3w3;
-    @FXML
-    private TextField po3w4;
-    @FXML
-    private TextField po3w5;
-    @FXML
-    private TextField po3co11;
-    @FXML
-    private TextField po3co12;
-    @FXML
-    private TextField po3co13;
-    @FXML
-    private TextField po3co14;
-    @FXML
-    private TextField po3co15;
-    @FXML
-    private TextField po3co21;
-    @FXML
-    private TextField po3co22;
-    @FXML
-    private TextField po3co23;
-    @FXML
-    private TextField po3co24;
-    @FXML
-    private TextField po3co25;
-    @FXML
-    private TextField po3co31;
-    @FXML
-    private TextField po3co33;
-    @FXML
-    private TextField po3co32;
-    @FXML
-    private TextField po3co34;
-    @FXML
-    private TextField po3co35;
-    @FXML
-    private TextField po3co41;
-    @FXML
-    private TextField po3co42;
-    @FXML
-    private TextField po3co43;
-    @FXML
-    private TextField po3co44;
-    @FXML
-    private TextField po3co45;
-    @FXML
-    private TextField po3co51;
-    @FXML
-    private TextField po3co52;
-    @FXML
-    private TextField po3co53;
-    @FXML
-    private TextField po3co54;
-    @FXML
-    private TextField po3co55;
-    @FXML
-    private TextField po3wtotal;
-    @FXML
-    private TextField po3co1total;
-    @FXML
-    private TextField po3co2total;
-    @FXML
-    private TextField po3co3total;
-    @FXML
-    private TextField po3co4total;
-    @FXML
-    private TextField po3co5total;
-    @FXML
-    private TextField po4w1;
-    @FXML
-    private TextField po4w2;
-    @FXML
-    private TextField po4w3;
-    @FXML
-    private TextField po4w4;
-    @FXML
-    private TextField po4w5;
-    @FXML
-    private TextField po4co11;
-    @FXML
-    private TextField po4co12;
-    @FXML
-    private TextField po4co13;
-    @FXML
-    private TextField po4co14;
-    @FXML
-    private TextField po4co15;
-    @FXML
-    private TextField po4co21;
-    @FXML
-    private TextField po4co22;
-    @FXML
-    private TextField po4co23;
-    @FXML
-    private TextField po4co24;
-    @FXML
-    private TextField po4co25;
-    @FXML
-    private TextField po4co31;
-    @FXML
-    private TextField po4co33;
-    @FXML
-    private TextField po4co32;
-    @FXML
-    private TextField po4co34;
-    @FXML
-    private TextField po4co35;
-    @FXML
-    private TextField po4co41;
-    @FXML
-    private TextField po4co42;
-    @FXML
-    private TextField po4co43;
-    @FXML
-    private TextField po4co44;
-    @FXML
-    private TextField po4co45;
-    @FXML
-    private TextField po4co51;
-    @FXML
-    private TextField po4co52;
-    @FXML
-    private TextField po4co53;
-    @FXML
-    private TextField po4co54;
-    @FXML
-    private TextField po4co55;
-    @FXML
-    private TextField po4wtotal;
-    @FXML
-    private TextField po4co1total;
-    @FXML
-    private TextField po4co2total;
-    @FXML
-    private TextField po4co3total;
-    @FXML
-    private TextField po4co4total;
-    @FXML
-    private TextField po4co5total;
-    @FXML
-    private TextField po5w1;
-    @FXML
-    private TextField po5w2;
-    @FXML
-    private TextField po5w3;
-    @FXML
-    private TextField po5w4;
-    @FXML
-    private TextField po5w5;
-    @FXML
-    private TextField po5co11;
-    @FXML
-    private TextField po5co12;
-    @FXML
-    private TextField po5co13;
-    @FXML
-    private TextField po5co14;
-    @FXML
-    private TextField po5co15;
-    @FXML
-    private TextField po5co21;
-    @FXML
-    private TextField po5co22;
-    @FXML
-    private TextField po5co23;
-    @FXML
-    private TextField po5co24;
-    @FXML
-    private TextField po5co25;
-    @FXML
-    private TextField po5co31;
-    @FXML
-    private TextField po5co33;
-    @FXML
-    private TextField po5co32;
-    @FXML
-    private TextField po5co34;
-    @FXML
-    private TextField po5co35;
-    @FXML
-    private TextField po5co41;
-    @FXML
-    private TextField po5co42;
-    @FXML
-    private TextField po5co43;
-    @FXML
-    private TextField po5co44;
-    @FXML
-    private TextField po5co45;
-    @FXML
-    private TextField po5co51;
-    @FXML
-    private TextField po5co52;
-    @FXML
-    private TextField po5co53;
-    @FXML
-    private TextField po5co54;
-    @FXML
-    private TextField po5co55;
-    @FXML
-    private TextField po5wtotal;
-    @FXML
-    private TextField po5co1total;
-    @FXML
-    private TextField po5co2total;
-    @FXML
-    private TextField po5co3total;
-    @FXML
-    private TextField po5co4total;
-    @FXML
-    private TextField po5co5total;
-    @FXML
-    private TextField po6w1;
-    @FXML
-    private TextField po6w2;
-    @FXML
-    private TextField po6w3;
-    @FXML
-    private TextField po6w4;
-    @FXML
-    private TextField po6w5;
-    @FXML
-    private TextField po6co11;
-    @FXML
-    private TextField po6co12;
-    @FXML
-    private TextField po6co13;
-    @FXML
-    private TextField po6co14;
-    @FXML
-    private TextField po6co15;
-    @FXML
-    private TextField po6co21;
-    @FXML
-    private TextField po6co22;
-    @FXML
-    private TextField po6co23;
-    @FXML
-    private TextField po6co24;
-    @FXML
-    private TextField po6co25;
-    @FXML
-    private TextField po6co31;
-    @FXML
-    private TextField po6co33;
-    @FXML
-    private TextField po6co32;
-    @FXML
-    private TextField po6co34;
-    @FXML
-    private TextField po6co35;
-    @FXML
-    private TextField po6co41;
-    @FXML
-    private TextField po6co42;
-    @FXML
-    private TextField po6co43;
-    @FXML
-    private TextField po6co44;
-    @FXML
-    private TextField po6co45;
-    @FXML
-    private TextField po6co51;
-    @FXML
-    private TextField po6co52;
-    @FXML
-    private TextField po6co53;
-    @FXML
-    private TextField po6co54;
-    @FXML
-    private TextField po6co55;
-    @FXML
-    private TextField po6wtotal;
-    @FXML
-    private TextField po6co1total;
-    @FXML
-    private TextField po6co2total;
-    @FXML
-    private TextField po6co3total;
-    @FXML
-    private TextField po6co4total;
-    @FXML
-    private TextField po6co5total;
-    @FXML
-    private TextField po7w1;
-    @FXML
-    private TextField po7w2;
-    @FXML
-    private TextField po7w3;
-    @FXML
-    private TextField po7w4;
-    @FXML
-    private TextField po7w5;
-    @FXML
-    private TextField po7co11;
-    @FXML
-    private TextField po7co12;
-    @FXML
-    private TextField po7co13;
-    @FXML
-    private TextField po7co14;
-    @FXML
-    private TextField po7co15;
-    @FXML
-    private TextField po7co21;
-    @FXML
-    private TextField po7co22;
-    @FXML
-    private TextField po7co23;
-    @FXML
-    private TextField po7co24;
-    @FXML
-    private TextField po7co25;
-    @FXML
-    private TextField po7co31;
-    @FXML
-    private TextField po7co33;
-    @FXML
-    private TextField po7co32;
-    @FXML
-    private TextField po7co34;
-    @FXML
-    private TextField po7co35;
-    @FXML
-    private TextField po7co41;
-    @FXML
-    private TextField po7co42;
-    @FXML
-    private TextField po7co43;
-    @FXML
-    private TextField po7co44;
-    @FXML
-    private TextField po7co45;
-    @FXML
-    private TextField po7co51;
-    @FXML
-    private TextField po7co52;
-    @FXML
-    private TextField po7co53;
-    @FXML
-    private TextField po7co54;
-    @FXML
-    private TextField po7co55;
-    @FXML
-    private TextField po7wtotal;
-    @FXML
-    private TextField po7co1total;
-    @FXML
-    private TextField po7co2total;
-    @FXML
-    private TextField po7co3total;
-    @FXML
-    private TextField po7co4total;
-    @FXML
-    private TextField po7co5total;
-    @FXML
-    private TextField po8w1;
-    @FXML
-    private TextField po8w2;
-    @FXML
-    private TextField po8w3;
-    @FXML
-    private TextField po8w4;
-    @FXML
-    private TextField po8w5;
-    @FXML
-    private TextField po8co11;
-    @FXML
-    private TextField po8co12;
-    @FXML
-    private TextField po8co13;
-    @FXML
-    private TextField po8co14;
-    @FXML
-    private TextField po8co15;
-    @FXML
-    private TextField po8co21;
-    @FXML
-    private TextField po8co22;
-    @FXML
-    private TextField po8co23;
-    @FXML
-    private TextField po8co24;
-    @FXML
-    private TextField po8co25;
-    @FXML
-    private TextField po8co31;
-    @FXML
-    private TextField po8co33;
-    @FXML
-    private TextField po8co32;
-    @FXML
-    private TextField po8co34;
-    @FXML
-    private TextField po8co35;
-    @FXML
-    private TextField po8co41;
-    @FXML
-    private TextField po8co42;
-    @FXML
-    private TextField po8co43;
-    @FXML
-    private TextField po8co44;
-    @FXML
-    private TextField po8co45;
-    @FXML
-    private TextField po8co51;
-    @FXML
-    private TextField po8co52;
-    @FXML
-    private TextField po8co53;
-    @FXML
-    private TextField po8co54;
-    @FXML
-    private TextField po8co55;
-    @FXML
-    private TextField po8wtotal;
-    @FXML
-    private TextField po8co1total;
-    @FXML
-    private TextField po8co2total;
-    @FXML
-    private TextField po8co3total;
-    @FXML
-    private TextField po8co4total;
-    @FXML
-    private TextField po8co5total;
-    @FXML
-    private TextField po9w1;
-    @FXML
-    private TextField po9w2;
-    @FXML
-    private TextField po9w3;
-    @FXML
-    private TextField po9w4;
-    @FXML
-    private TextField po9w5;
-    @FXML
-    private TextField po9co11;
-    @FXML
-    private TextField po9co12;
-    @FXML
-    private TextField po9co13;
-    @FXML
-    private TextField po9co14;
-    @FXML
-    private TextField po9co15;
-    @FXML
-    private TextField po9co21;
-    @FXML
-    private TextField po9co22;
-    @FXML
-    private TextField po9co23;
-    @FXML
-    private TextField po9co24;
-    @FXML
-    private TextField po9co25;
-    @FXML
-    private TextField po9co31;
-    @FXML
-    private TextField po9co33;
-    @FXML
-    private TextField po9co32;
-    @FXML
-    private TextField po9co34;
-    @FXML
-    private TextField po9co35;
-    @FXML
-    private TextField po9co41;
-    @FXML
-    private TextField po9co42;
-    @FXML
-    private TextField po9co43;
-    @FXML
-    private TextField po9co44;
-    @FXML
-    private TextField po9co45;
-    @FXML
-    private TextField po9co51;
-    @FXML
-    private TextField po9co52;
-    @FXML
-    private TextField po9co53;
-    @FXML
-    private TextField po9co54;
-    @FXML
-    private TextField po9co55;
-    @FXML
-    private TextField po9wtotal;
-    @FXML
-    private TextField po9co1total;
-    @FXML
-    private TextField po9co2total;
-    @FXML
-    private TextField po9co3total;
-    @FXML
-    private TextField po9co4total;
-    @FXML
-    private TextField po9co5total;
-    @FXML
-    private TextField po10w1;
-    @FXML
-    private TextField po10w2;
-    @FXML
-    private TextField po10w3;
-    @FXML
-    private TextField po10w4;
-    @FXML
-    private TextField po10w5;
-    @FXML
-    private TextField po10co11;
-    @FXML
-    private TextField po10co12;
-    @FXML
-    private TextField po10co13;
-    @FXML
-    private TextField po10co14;
-    @FXML
-    private TextField po10co15;
-    @FXML
-    private TextField po10co21;
-    @FXML
-    private TextField po10co22;
-    @FXML
-    private TextField po10co23;
-    @FXML
-    private TextField po10co24;
-    @FXML
-    private TextField po10co25;
-    @FXML
-    private TextField po10co31;
-    @FXML
-    private TextField po10co33;
-    @FXML
-    private TextField po10co32;
-    @FXML
-    private TextField po10co34;
-    @FXML
-    private TextField po10co35;
-    @FXML
-    private TextField po10co41;
-    @FXML
-    private TextField po10co42;
-    @FXML
-    private TextField po10co43;
-    @FXML
-    private TextField po10co44;
-    @FXML
-    private TextField po10co45;
-    @FXML
-    private TextField po10co51;
-    @FXML
-    private TextField po10co52;
-    @FXML
-    private TextField po10co53;
-    @FXML
-    private TextField po10co54;
-    @FXML
-    private TextField po10co55;
-    @FXML
-    private TextField po10wtotal;
-    @FXML
-    private TextField po10co1total;
-    @FXML
-    private TextField po10co2total;
-    @FXML
-    private TextField po10co3total;
-    @FXML
-    private TextField po10co4total;
-    @FXML
-    private TextField po10co5total;
-    @FXML
-    private TextField po11w1;
-    @FXML
-    private TextField po11w2;
-    @FXML
-    private TextField po11w3;
-    @FXML
-    private TextField po11w4;
-    @FXML
-    private TextField po11w5;
-    @FXML
-    private TextField po11co11;
-    @FXML
-    private TextField po11co12;
-    @FXML
-    private TextField po11co13;
-    @FXML
-    private TextField po11co14;
-    @FXML
-    private TextField po11co15;
-    @FXML
-    private TextField po11co21;
-    @FXML
-    private TextField po11co22;
-    @FXML
-    private TextField po11co23;
-    @FXML
-    private TextField po11co24;
-    @FXML
-    private TextField po11co25;
-    @FXML
-    private TextField po11co31;
-    @FXML
-    private TextField po11co33;
-    @FXML
-    private TextField po11co32;
-    @FXML
-    private TextField po11co34;
-    @FXML
-    private TextField po11co35;
-    @FXML
-    private TextField po11co41;
-    @FXML
-    private TextField po11co42;
-    @FXML
-    private TextField po11co43;
-    @FXML
-    private TextField po11co44;
-    @FXML
-    private TextField po11co45;
-    @FXML
-    private TextField po11co51;
-    @FXML
-    private TextField po11co52;
-    @FXML
-    private TextField po11co53;
-    @FXML
-    private TextField po11co54;
-    @FXML
-    private TextField po11co55;
-    @FXML
-    private TextField po11wtotal;
-    @FXML
-    private TextField po11co1total;
-    @FXML
-    private TextField po11co2total;
-    @FXML
-    private TextField po11co3total;
-    @FXML
-    private TextField po11co4total;
-    @FXML
-    private TextField po11co5total;
-    @FXML
-    private TextField po12w1;
-    @FXML
-    private TextField po12w2;
-    @FXML
-    private TextField po12w3;
-    @FXML
-    private TextField po12w4;
-    @FXML
-    private TextField po12w5;
-    @FXML
-    private TextField po12co11;
-    @FXML
-    private TextField po12co12;
-    @FXML
-    private TextField po12co13;
-    @FXML
-    private TextField po12co14;
-    @FXML
-    private TextField po12co15;
-    @FXML
-    private TextField po12co21;
-    @FXML
-    private TextField po12co22;
-    @FXML
-    private TextField po12co23;
-    @FXML
-    private TextField po12co24;
-    @FXML
-    private TextField po12co25;
-    @FXML
-    private TextField po12co31;
-    @FXML
-    private TextField po12co33;
-    @FXML
-    private TextField po12co32;
-    @FXML
-    private TextField po12co34;
-    @FXML
-    private TextField po12co35;
-    @FXML
-    private TextField po12co41;
-    @FXML
-    private TextField po12co42;
-    @FXML
-    private TextField po12co43;
-    @FXML
-    private TextField po12co44;
-    @FXML
-    private TextField po12co45;
-    @FXML
-    private TextField po12co51;
-    @FXML
-    private TextField po12co52;
-    @FXML
-    private TextField po12co53;
-    @FXML
-    private TextField po12co54;
-    @FXML
-    private TextField po12co55;
-    @FXML
-    private TextField po12wtotal;
-    @FXML
-    private TextField po12co1total;
-    @FXML
-    private TextField po12co2total;
-    @FXML
-    private TextField po12co3total;
-    @FXML
-    private TextField po12co4total;
-    @FXML
-    private TextField po12co5total;
     
     @FXML
         private TextField dbtablename;
@@ -943,336 +153,6 @@ public class COPOTableController implements Initializable {
     
     
      private String username;
-    @FXML
-    private TextArea po2com1;
-    @FXML
-    private TextArea po2com2;
-    @FXML
-    private TextArea po2com3;
-    @FXML
-    private TextArea po2com4;
-    @FXML
-    private TextArea po2ind1;
-    @FXML
-    private TextArea po2ind2;
-    @FXML
-    private TextArea po2ind3;
-    @FXML
-    private TextArea po2ind4;
-    @FXML
-    private TextArea po2ind5;
-    @FXML
-    private TextArea po21;
-    @FXML
-    private TextArea po22;
-    @FXML
-    private TextArea po23;
-    @FXML
-    private TextArea po24;
-    @FXML
-    private TextArea po25;
-    @FXML
-    private TextArea po2com5;
-    @FXML
-    private TextArea po3com1;
-    @FXML
-    private TextArea po3com2;
-    @FXML
-    private TextArea po3com3;
-    @FXML
-    private TextArea po3com4;
-    @FXML
-    private TextArea po3ind1;
-    @FXML
-    private TextArea po3ind2;
-    @FXML
-    private TextArea po3ind3;
-    @FXML
-    private TextArea po3ind4;
-    @FXML
-    private TextArea po3ind5;
-    @FXML
-    private TextArea po31;
-    @FXML
-    private TextArea po32;
-    @FXML
-    private TextArea po33;
-    @FXML
-    private TextArea po34;
-    @FXML
-    private TextArea po35;
-    @FXML
-    private TextArea po3com5;
-    @FXML
-    private TextArea po4com1;
-    @FXML
-    private TextArea po4com2;
-    @FXML
-    private TextArea po4com3;
-    @FXML
-    private TextArea po4com4;
-    @FXML
-    private TextArea po4ind1;
-    @FXML
-    private TextArea po4ind2;
-    @FXML
-    private TextArea po4ind3;
-    @FXML
-    private TextArea po4ind4;
-    @FXML
-    private TextArea po4ind5;
-    @FXML
-    private TextArea po41;
-    @FXML
-    private TextArea po42;
-    @FXML
-    private TextArea po43;
-    @FXML
-    private TextArea po44;
-    @FXML
-    private TextArea po45;
-    @FXML
-    private TextArea po4com5;
-    @FXML
-    private TextArea po5com1;
-    @FXML
-    private TextArea po5com2;
-    @FXML
-    private TextArea po5com3;
-    @FXML
-    private TextArea po5com4;
-    @FXML
-    private TextArea po5ind1;
-    @FXML
-    private TextArea po5ind2;
-    @FXML
-    private TextArea po5ind3;
-    @FXML
-    private TextArea po5ind4;
-    @FXML
-    private TextArea po5ind5;
-    @FXML
-    private TextArea po51;
-    @FXML
-    private TextArea po52;
-    @FXML
-    private TextArea po53;
-    @FXML
-    private TextArea po54;
-    @FXML
-    private TextArea po55;
-    @FXML
-    private TextArea po5com5;
-    @FXML
-    private TextArea po6com1;
-    @FXML
-    private TextArea po6com2;
-    @FXML
-    private TextArea po6com3;
-    @FXML
-    private TextArea po6com4;
-    @FXML
-    private TextArea po6ind1;
-    @FXML
-    private TextArea po6ind2;
-    @FXML
-    private TextArea po6ind3;
-    @FXML
-    private TextArea po6ind4;
-    @FXML
-    private TextArea po6ind5;
-    @FXML
-    private TextArea po61;
-    @FXML
-    private TextArea po62;
-    @FXML
-    private TextArea po63;
-    @FXML
-    private TextArea po64;
-    @FXML
-    private TextArea po65;
-    @FXML
-    private TextArea po6com5;
-    @FXML
-    private TextArea po7com1;
-    @FXML
-    private TextArea po7com2;
-    @FXML
-    private TextArea po7com3;
-    @FXML
-    private TextArea po7com4;
-    @FXML
-    private TextArea po7ind1;
-    @FXML
-    private TextArea po7ind2;
-    @FXML
-    private TextArea po7ind3;
-    @FXML
-    private TextArea po7ind4;
-    @FXML
-    private TextArea po7ind5;
-    @FXML
-    private TextArea po71;
-    @FXML
-    private TextArea po72;
-    @FXML
-    private TextArea po73;
-    @FXML
-    private TextArea po74;
-    @FXML
-    private TextArea po75;
-    @FXML
-    private TextArea po7com5;
-    @FXML
-    private TextArea po8com1;
-    @FXML
-    private TextArea po8com2;
-    @FXML
-    private TextArea po8com3;
-    @FXML
-    private TextArea po8com4;
-    @FXML
-    private TextArea po8ind1;
-    @FXML
-    private TextArea po8ind2;
-    @FXML
-    private TextArea po8ind3;
-    @FXML
-    private TextArea po8ind4;
-    @FXML
-    private TextArea po8ind5;
-    @FXML
-    private TextArea po81;
-    @FXML
-    private TextArea po82;
-    @FXML
-    private TextArea po83;
-    @FXML
-    private TextArea po84;
-    @FXML
-    private TextArea po85;
-    @FXML
-    private TextArea po8com5;
-    @FXML
-    private TextArea po9com1;
-    @FXML
-    private TextArea po9com2;
-    @FXML
-    private TextArea po9com3;
-    @FXML
-    private TextArea po9com4;
-    @FXML
-    private TextArea po9ind1;
-    @FXML
-    private TextArea po9ind2;
-    @FXML
-    private TextArea po9ind3;
-    @FXML
-    private TextArea po9ind4;
-    @FXML
-    private TextArea po9ind5;
-    @FXML
-    private TextArea po91;
-    @FXML
-    private TextArea po92;
-    @FXML
-    private TextArea po93;
-    @FXML
-    private TextArea po94;
-    @FXML
-    private TextArea po95;
-    @FXML
-    private TextArea po9com5;
-    @FXML
-    private TextArea po10com1;
-    @FXML
-    private TextArea po10com2;
-    @FXML
-    private TextArea po10com3;
-    @FXML
-    private TextArea po10com4;
-    @FXML
-    private TextArea po10ind1;
-    @FXML
-    private TextArea po10ind2;
-    @FXML
-    private TextArea po10ind3;
-    @FXML
-    private TextArea po10ind4;
-    @FXML
-    private TextArea po10ind5;
-    @FXML
-    private TextArea po101;
-    @FXML
-    private TextArea po102;
-    @FXML
-    private TextArea po103;
-    @FXML
-    private TextArea po104;
-    @FXML
-    private TextArea po105;
-    @FXML
-    private TextArea po10com5;
-    @FXML
-    private TextArea po11com1;
-    @FXML
-    private TextArea po11com2;
-    @FXML
-    private TextArea po11com3;
-    @FXML
-    private TextArea po11com4;
-    @FXML
-    private TextArea po11ind1;
-    @FXML
-    private TextArea po11ind2;
-    @FXML
-    private TextArea po11ind3;
-    @FXML
-    private TextArea po11ind4;
-    @FXML
-    private TextArea po11ind5;
-    @FXML
-    private TextArea po111;
-    @FXML
-    private TextArea po112;
-    @FXML
-    private TextArea po113;
-    @FXML
-    private TextArea po114;
-    @FXML
-    private TextArea po115;
-    @FXML
-    private TextArea po11com5;
-    @FXML
-    private TextArea po12com1;
-    @FXML
-    private TextArea po12com2;
-    @FXML
-    private TextArea po12com3;
-    @FXML
-    private TextArea po12com4;
-    @FXML
-    private TextArea po12ind1;
-    @FXML
-    private TextArea po12ind2;
-    @FXML
-    private TextArea po12ind3;
-    @FXML
-    private TextArea po12ind4;
-    @FXML
-    private TextArea po12ind5;
-    @FXML
-    private TextArea po121;
-    @FXML
-    private TextArea po122;
-    @FXML
-    private TextArea po123;
-    @FXML
-    private TextArea po124;
-    @FXML
-    private TextArea po125;
-    @FXML
-    private TextArea po12com5;
     @FXML
     private Button redirectDash;
     @FXML
@@ -1282,9 +162,9 @@ public class COPOTableController implements Initializable {
     @FXML
     private Button btnmappingtrue;
     @FXML
-    private TextField dbtablenametrue;
+    private Button btnAdd1;
     @FXML
-    private Button btnAddToDatabase;
+    private TextField dbtablename1;
 
 //     get username while login
       public void setUsername(String username) {
@@ -2202,7 +1082,45 @@ program1co5total = po1co5total.getText();
 //        
         
          databasetableName = dbtablename.getText(); 
+TextField[] textFields = {
+        po1w1, po1w2, po1w3, po1w4, po1w5,
+        po1co11, po1co12, po1co13, po1co14, po1co15,
+        po1co21, po1co22, po1co23, po1co24, po1co25,
+        po1co31, po1co32, po1co33, po1co34, po1co35,
+        po1co41, po1co42, po1co43, po1co44, po1co45,
+        po1co51, po1co52, po1co53, po1co54, po1co55
+    };
 
+    TextArea[] textAreas = {
+        po11, po12, po13, po14, po15,
+        po1com1, po1com2, po1com3, po1com4, po1com5,
+        po1ind1, po1ind2, po1ind3, po1ind4, po1ind5
+    };
+
+    boolean hasEmptyField = false;
+
+    for (TextField textField : textFields) {
+        if (textField.getText().isEmpty()) {
+            hasEmptyField = true;
+            textField.requestFocus();
+            break;
+        }
+    }
+
+    if (!hasEmptyField) {
+        for (TextArea textArea : textAreas) {
+            if (textArea.getText().isEmpty()) {
+                hasEmptyField = true;
+                textArea.requestFocus();
+                break;
+            }
+        }
+    }
+
+    if (!hasEmptyField) {
+        // All fields are filled, proceed with adding to the database
+        // ...
+    
 
 
 
@@ -3234,10 +2152,52 @@ alert.showAndWait();
      
         
     }
-
+            }
 
     @FXML
 private void Mapping(ActionEvent event) {
+    
+    TextField[] textFields = {
+        po1w1, po1w2, po1w3, po1w4, po1w5,
+        po1co11, po1co12, po1co13, po1co14, po1co15,
+        po1co21, po1co22, po1co23, po1co24, po1co25,
+        po1co31, po1co32, po1co33, po1co34, po1co35,
+        po1co41, po1co42, po1co43, po1co44, po1co45,
+        po1co51, po1co52, po1co53, po1co54, po1co55
+    };
+
+    TextArea[] textAreas = {
+        po11, po12, po13, po14, po15,
+        po1com1, po1com2, po1com3, po1com4, po1com5,
+        po1ind1, po1ind2, po1ind3, po1ind4, po1ind5
+    };
+
+    boolean hasEmptyField = false;
+
+    for (TextField textField : textFields) {
+        if (textField.getText().isEmpty()) {
+            hasEmptyField = true;
+            textField.requestFocus();
+            break;
+        }
+    }
+
+    if (!hasEmptyField) {
+        for (TextArea textArea : textAreas) {
+            if (textArea.getText().isEmpty()) {
+                hasEmptyField = true;
+                textArea.requestFocus();
+                break;
+            }
+        }
+    }
+
+    if (!hasEmptyField) {
+        // All fields are filled, proceed with adding to the database
+        // ...
+    
+    
+    
     float AddWeight1 = Float.valueOf(po1w1.getText());
     float AddWeight2 = Float.valueOf(po1w2.getText());
     float AddWeight3 = Float.valueOf(po1w3.getText());
@@ -3294,620 +2254,620 @@ private void Mapping(ActionEvent event) {
     po1co5total.setText(String.valueOf(Totalco5));
 //    
 //    for program 2 
- float AddWeight1_2 = Float.valueOf(po2w1.getText());
-    float AddWeight2_2 = Float.valueOf(po2w2.getText());
-    float AddWeight3_2 = Float.valueOf(po2w3.getText());
-    float AddWeight4_2 = Float.valueOf(po2w4.getText());
-    float AddWeight5_2 = Float.valueOf(po2w5.getText());
-
-    float TotalWeight_2 = AddWeight1_2 + AddWeight2_2 + AddWeight3_2 + AddWeight4_2 + AddWeight5_2;
-
-    int Addco11_2 = Integer.parseInt(po2co11.getText());
-    int Addco12_2 = Integer.parseInt(po2co12.getText());
-    int Addco13_2 = Integer.parseInt(po2co13.getText());
-    int Addco14_2 = Integer.parseInt(po2co14.getText());
-    int Addco15_2 = Integer.parseInt(po2co15.getText());
-
-    int TotalCo1_2 = Addco11_2 + Addco12_2 + Addco13_2 + Addco14_2 + Addco15_2;
-
-    int Addco21_2 = Integer.parseInt(po2co21.getText());
-    int Addco22_2 = Integer.parseInt(po2co22.getText());
-    int Addco23_2 = Integer.parseInt(po2co23.getText());
-    int Addco24_2 = Integer.parseInt(po2co24.getText());
-    int Addco25_2 = Integer.parseInt(po2co25.getText());
-
-    int TotalCo2_2 = Addco21_2 + Addco22_2 + Addco23_2 + Addco24_2 + Addco25_2;
-
-    int Addco31_2 = Integer.parseInt(po2co31.getText());
-    int Addco32_2 = Integer.parseInt(po2co32.getText());
-    int Addco33_2 = Integer.parseInt(po2co33.getText());
-    int Addco34_2 = Integer.parseInt(po2co34.getText());
-    int Addco35_2 = Integer.parseInt(po2co35.getText());
-
-    int TotalCo3_2 = Addco31_2 + Addco32_2 + Addco33_2 + Addco34_2 + Addco35_2;
-
-    int Addco41_2 = Integer.parseInt(po2co41.getText());
-    int Addco42_2 = Integer.parseInt(po2co42.getText());
-    int Addco43_2 = Integer.parseInt(po2co43.getText());
-    int Addco44_2 = Integer.parseInt(po2co44.getText());
-    int Addco45_2 = Integer.parseInt(po2co45.getText());
-
-    int TotalCo4_2 = Addco41_2 + Addco42_2 + Addco43_2 + Addco44_2 + Addco45_2;
-
-    int Addco51_2 = Integer.parseInt(po2co51.getText());
-    int Addco52_2 = Integer.parseInt(po2co52.getText());
-    int Addco53_2 = Integer.parseInt(po2co53.getText());
-    int Addco54_2 = Integer.parseInt(po2co54.getText());
-    int Addco55_2 = Integer.parseInt(po2co55.getText());
-
-    int TotalCo5_2 = Addco51_2 + Addco52_2 + Addco53_2 + Addco54_2 + Addco55_2;
-
-    po2wtotal.setText(String.valueOf(TotalWeight_2));
-    po2co1total.setText(String.valueOf(TotalCo1_2));
-    po2co2total.setText(String.valueOf(TotalCo2_2));
-    po2co3total.setText(String.valueOf(TotalCo3_2));
-    po2co4total.setText(String.valueOf(TotalCo4_2));
-    po2co5total.setText(String.valueOf(TotalCo5_2));
-
-    
-//     for program 3
-    float AddWeight1_3 = Float.valueOf(po3w1.getText());
-    float AddWeight2_3 = Float.valueOf(po3w2.getText());
-    float AddWeight3_3 = Float.valueOf(po3w3.getText());
-    float AddWeight4_3 = Float.valueOf(po3w4.getText());
-    float AddWeight5_3 = Float.valueOf(po3w5.getText());
-
-    float TotalWeight_3 = AddWeight1_3 + AddWeight2_3 + AddWeight3_3 + AddWeight4_3 + AddWeight5_3;
-
-    int Addco11_3 = Integer.parseInt(po3co11.getText());
-    int Addco12_3 = Integer.parseInt(po3co12.getText());
-    int Addco13_3 = Integer.parseInt(po3co13.getText());
-    int Addco14_3 = Integer.parseInt(po3co14.getText());
-    int Addco15_3 = Integer.parseInt(po3co15.getText());
-
-    int TotalCo1_3 = Addco11_3 + Addco12_3 + Addco13_3 + Addco14_3 + Addco15_3;
-
-    int Addco21_3 = Integer.parseInt(po3co21.getText());
-    int Addco22_3 = Integer.parseInt(po3co22.getText());
-    int Addco23_3 = Integer.parseInt(po3co23.getText());
-    int Addco24_3 = Integer.parseInt(po3co24.getText());
-    int Addco25_3 = Integer.parseInt(po3co25.getText());
-
-    int TotalCo2_3 = Addco21_3 + Addco22_3 + Addco23_3 + Addco24_3 + Addco25_3;
-
-    int Addco31_3 = Integer.parseInt(po3co31.getText());
-    int Addco32_3 = Integer.parseInt(po3co32.getText());
-    int Addco33_3 = Integer.parseInt(po3co33.getText());
-    int Addco34_3 = Integer.parseInt(po3co34.getText());
-    int Addco35_3 = Integer.parseInt(po3co35.getText());
-
-    int TotalCo3_3 = Addco31_3 + Addco32_3 + Addco33_3 + Addco34_3 + Addco35_3;
-
-    int Addco41_3 = Integer.parseInt(po3co41.getText());
-    int Addco42_3 = Integer.parseInt(po3co42.getText());
-    int Addco43_3 = Integer.parseInt(po3co43.getText());
-    int Addco44_3 = Integer.parseInt(po3co44.getText());
-    int Addco45_3 = Integer.parseInt(po3co45.getText());
-
-    int TotalCo4_3 = Addco41_3 + Addco42_3 + Addco43_3 + Addco44_3 + Addco45_3;
-
-    int Addco51_3 = Integer.parseInt(po3co51.getText());
-    int Addco52_3 = Integer.parseInt(po3co52.getText());
-    int Addco53_3 = Integer.parseInt(po3co53.getText());
-    int Addco54_3 = Integer.parseInt(po3co54.getText());
-    int Addco55_3 = Integer.parseInt(po3co55.getText());
-
-    int TotalCo5_3 = Addco51_3 + Addco52_3 + Addco53_3 + Addco54_3 + Addco55_3;
-
-    po3wtotal.setText(String.valueOf(TotalWeight_3));
-    po3co1total.setText(String.valueOf(TotalCo1_3));
-    po3co2total.setText(String.valueOf(TotalCo2_3));
-    po3co3total.setText(String.valueOf(TotalCo3_3));
-    po3co4total.setText(String.valueOf(TotalCo4_3));
-    po3co5total.setText(String.valueOf(TotalCo5_3));
-    
-       float AddWeight1_4 = Float.valueOf(po4w1.getText());
-    float AddWeight2_4 = Float.valueOf(po4w2.getText());
-    float AddWeight3_4 = Float.valueOf(po4w3.getText());
-    float AddWeight4_4 = Float.valueOf(po4w4.getText());
-    float AddWeight5_4 = Float.valueOf(po4w5.getText());
-
-    float TotalWeight_4 = AddWeight1_4 + AddWeight2_4 + AddWeight3_4 + AddWeight4_4 + AddWeight5_4;
-
-    int Addco11_4 = Integer.parseInt(po4co11.getText());
-    int Addco12_4 = Integer.parseInt(po4co12.getText());
-    int Addco13_4 = Integer.parseInt(po4co13.getText());
-    int Addco14_4 = Integer.parseInt(po4co14.getText());
-    int Addco15_4 = Integer.parseInt(po4co15.getText());
-
-    int TotalCo1_4 = Addco11_4 + Addco12_4 + Addco13_4 + Addco14_4 + Addco15_4;
-
-    int Addco21_4 = Integer.parseInt(po4co21.getText());
-    int Addco22_4 = Integer.parseInt(po4co22.getText());
-    int Addco23_4 = Integer.parseInt(po4co23.getText());
-    int Addco24_4 = Integer.parseInt(po4co24.getText());
-    int Addco25_4 = Integer.parseInt(po4co25.getText());
-
-    int TotalCo2_4 = Addco21_4 + Addco22_4 + Addco23_4 + Addco24_4 + Addco25_4;
-
-    int Addco31_4 = Integer.parseInt(po4co31.getText());
-    int Addco32_4 = Integer.parseInt(po4co32.getText());
-    int Addco33_4 = Integer.parseInt(po4co33.getText());
-    int Addco34_4 = Integer.parseInt(po4co34.getText());
-    int Addco35_4 = Integer.parseInt(po4co35.getText());
-
-    int TotalCo3_4 = Addco31_4 + Addco32_4 + Addco33_4 + Addco34_4 + Addco35_4;
-
-    int Addco41_4 = Integer.parseInt(po4co41.getText());
-    int Addco42_4 = Integer.parseInt(po4co42.getText());
-    int Addco43_4 = Integer.parseInt(po4co43.getText());
-    int Addco44_4 = Integer.parseInt(po4co44.getText());
-    int Addco45_4 = Integer.parseInt(po4co45.getText());
-
-    int TotalCo4_4 = Addco41_4 + Addco42_4 + Addco43_4 + Addco44_4 + Addco45_4;
-
-    int Addco51_4 = Integer.parseInt(po4co51.getText());
-    int Addco52_4 = Integer.parseInt(po4co52.getText());
-    int Addco53_4 = Integer.parseInt(po4co53.getText());
-    int Addco54_4 = Integer.parseInt(po4co54.getText());
-    int Addco55_4 = Integer.parseInt(po4co55.getText());
-
-    int TotalCo5_4 = Addco51_4 + Addco52_4 + Addco53_4 + Addco54_4 + Addco55_4;
-
-    // Update the Total Weight and CO Total TextFields
-    po4wtotal.setText(String.valueOf(TotalWeight_4));
-    po4co1total.setText(String.valueOf(TotalCo1_4));
-    po4co2total.setText(String.valueOf(TotalCo2_4));
-    po4co3total.setText(String.valueOf(TotalCo3_4));
-    po4co4total.setText(String.valueOf(TotalCo4_4));
-    po4co5total.setText(String.valueOf(TotalCo5_4));
-
-     float AddWeight1_5 = Float.valueOf(po5w1.getText());
-    float AddWeight2_5 = Float.valueOf(po5w2.getText());
-    float AddWeight3_5 = Float.valueOf(po5w3.getText());
-    float AddWeight4_5 = Float.valueOf(po5w4.getText());
-    float AddWeight5_5 = Float.valueOf(po5w5.getText());
-
-    float TotalWeight_5 = AddWeight1_5 + AddWeight2_5 + AddWeight3_5 + AddWeight4_5 + AddWeight5_5;
-
-    int Addco11_5 = Integer.parseInt(po5co11.getText());
-    int Addco12_5 = Integer.parseInt(po5co12.getText());
-    int Addco13_5 = Integer.parseInt(po5co13.getText());
-    int Addco14_5 = Integer.parseInt(po5co14.getText());
-    int Addco15_5 = Integer.parseInt(po5co15.getText());
-
-    int TotalCo1_5 = Addco11_5 + Addco12_5 + Addco13_5 + Addco14_5 + Addco15_5;
-
-    int Addco21_5 = Integer.parseInt(po5co21.getText());
-    int Addco22_5 = Integer.parseInt(po5co22.getText());
-    int Addco23_5 = Integer.parseInt(po5co23.getText());
-    int Addco24_5 = Integer.parseInt(po5co24.getText());
-    int Addco25_5 = Integer.parseInt(po5co25.getText());
-
-    int TotalCo2_5 = Addco21_5 + Addco22_5 + Addco23_5 + Addco24_5 + Addco25_5;
-
-    int Addco31_5 = Integer.parseInt(po5co31.getText());
-    int Addco32_5 = Integer.parseInt(po5co32.getText());
-    int Addco33_5 = Integer.parseInt(po5co33.getText());
-    int Addco34_5 = Integer.parseInt(po5co34.getText());
-    int Addco35_5 = Integer.parseInt(po5co35.getText());
-
-    int TotalCo3_5 = Addco31_5 + Addco32_5 + Addco33_5 + Addco34_5 + Addco35_5;
-
-    int Addco41_5 = Integer.parseInt(po5co41.getText());
-    int Addco42_5 = Integer.parseInt(po5co42.getText());
-    int Addco43_5 = Integer.parseInt(po5co43.getText());
-    int Addco44_5 = Integer.parseInt(po5co44.getText());
-    int Addco45_5 = Integer.parseInt(po5co45.getText());
-
-    int TotalCo4_5 = Addco41_5 + Addco42_5 + Addco43_5 + Addco44_5 + Addco45_5;
-
-    int Addco51_5 = Integer.parseInt(po5co51.getText());
-    int Addco52_5 = Integer.parseInt(po5co52.getText());
-    int Addco53_5 = Integer.parseInt(po5co53.getText());
-    int Addco54_5 = Integer.parseInt(po5co54.getText());
-    int Addco55_5 = Integer.parseInt(po5co55.getText());
-
-    int TotalCo5_5 = Addco51_5 + Addco52_5 + Addco53_5 + Addco54_5 + Addco55_5;
-
-    // Update the Total Weight and CO Total TextFields
-    po5wtotal.setText(String.valueOf(TotalWeight_5));
-    po5co1total.setText(String.valueOf(TotalCo1_5));
-    po5co2total.setText(String.valueOf(TotalCo2_5));
-    po5co3total.setText(String.valueOf(TotalCo3_5));
-    po5co4total.setText(String.valueOf(TotalCo4_5));
-    po5co5total.setText(String.valueOf(TotalCo5_5));
-
-float AddWeight1_6 = Float.valueOf(po6w1.getText());
-float AddWeight2_6 = Float.valueOf(po6w2.getText());
-float AddWeight3_6 = Float.valueOf(po6w3.getText());
-float AddWeight4_6 = Float.valueOf(po6w4.getText());
-float AddWeight5_6 = Float.valueOf(po6w5.getText());
-
-float TotalWeight_6 = AddWeight1_6 + AddWeight2_6 + AddWeight3_6 + AddWeight4_6 + AddWeight5_6;
-
-int Addco11_6 = Integer.parseInt(po6co11.getText());
-int Addco12_6 = Integer.parseInt(po6co12.getText());
-int Addco13_6 = Integer.parseInt(po6co13.getText());
-int Addco14_6 = Integer.parseInt(po6co14.getText());
-int Addco15_6 = Integer.parseInt(po6co15.getText());
-
-int TotalCo1_6 = Addco11_6 + Addco12_6 + Addco13_6 + Addco14_6 + Addco15_6;
-
-int Addco21_6 = Integer.parseInt(po6co21.getText());
-int Addco22_6 = Integer.parseInt(po6co22.getText());
-int Addco23_6 = Integer.parseInt(po6co23.getText());
-int Addco24_6 = Integer.parseInt(po6co24.getText());
-int Addco25_6 = Integer.parseInt(po6co25.getText());
-
-int TotalCo2_6 = Addco21_6 + Addco22_6 + Addco23_6 + Addco24_6 + Addco25_6;
-
-int Addco31_6 = Integer.parseInt(po6co31.getText());
-int Addco32_6 = Integer.parseInt(po6co32.getText());
-int Addco33_6 = Integer.parseInt(po6co33.getText());
-int Addco34_6 = Integer.parseInt(po6co34.getText());
-int Addco35_6 = Integer.parseInt(po6co35.getText());
-
-int TotalCo3_6 = Addco31_6 + Addco32_6 + Addco33_6 + Addco34_6 + Addco35_6;
-
-int Addco41_6 = Integer.parseInt(po6co41.getText());
-int Addco42_6 = Integer.parseInt(po6co42.getText());
-int Addco43_6 = Integer.parseInt(po6co43.getText());
-int Addco44_6 = Integer.parseInt(po6co44.getText());
-int Addco45_6 = Integer.parseInt(po6co45.getText());
-
-int TotalCo4_6 = Addco41_6 + Addco42_6 + Addco43_6 + Addco44_6 + Addco45_6;
-
-int Addco51_6 = Integer.parseInt(po6co51.getText());
-int Addco52_6 = Integer.parseInt(po6co52.getText());
-int Addco53_6 = Integer.parseInt(po6co53.getText());
-int Addco54_6 = Integer.parseInt(po6co54.getText());
-int Addco55_6 = Integer.parseInt(po6co55.getText());
-
-int TotalCo5_6 = Addco51_6 + Addco52_6 + Addco53_6 + Addco54_6 + Addco55_6;
-
-// Update the Total Weight and CO Total TextFields
-po6wtotal.setText(String.valueOf(TotalWeight_6));
-po6co1total.setText(String.valueOf(TotalCo1_6));
-po6co2total.setText(String.valueOf(TotalCo2_6));
-po6co3total.setText(String.valueOf(TotalCo3_6));
-po6co4total.setText(String.valueOf(TotalCo4_6));
-po6co5total.setText(String.valueOf(TotalCo5_6));
-float AddWeight1_7 = Float.valueOf(po7w1.getText());
-float AddWeight2_7 = Float.valueOf(po7w2.getText());
-float AddWeight3_7 = Float.valueOf(po7w3.getText());
-float AddWeight4_7 = Float.valueOf(po7w4.getText());
-float AddWeight5_7 = Float.valueOf(po7w5.getText());
-
-float TotalWeight_7 = AddWeight1_7 + AddWeight2_7 + AddWeight3_7 + AddWeight4_7 + AddWeight5_7;
-
-int Addco11_7 = Integer.parseInt(po7co11.getText());
-int Addco12_7 = Integer.parseInt(po7co12.getText());
-int Addco13_7 = Integer.parseInt(po7co13.getText());
-int Addco14_7 = Integer.parseInt(po7co14.getText());
-int Addco15_7 = Integer.parseInt(po7co15.getText());
-
-int TotalCo1_7 = Addco11_7 + Addco12_7 + Addco13_7 + Addco14_7 + Addco15_7;
-
-int Addco21_7 = Integer.parseInt(po7co21.getText());
-int Addco22_7 = Integer.parseInt(po7co22.getText());
-int Addco23_7 = Integer.parseInt(po7co23.getText());
-int Addco24_7 = Integer.parseInt(po7co24.getText());
-int Addco25_7 = Integer.parseInt(po7co25.getText());
-
-int TotalCo2_7 = Addco21_7 + Addco22_7 + Addco23_7 + Addco24_7 + Addco25_7;
-
-int Addco31_7 = Integer.parseInt(po7co31.getText());
-int Addco32_7 = Integer.parseInt(po7co32.getText());
-int Addco33_7 = Integer.parseInt(po7co33.getText());
-int Addco34_7 = Integer.parseInt(po7co34.getText());
-int Addco35_7 = Integer.parseInt(po7co35.getText());
-
-int TotalCo3_7 = Addco31_7 + Addco32_7 + Addco33_7 + Addco34_7 + Addco35_7;
-
-int Addco41_7 = Integer.parseInt(po7co41.getText());
-int Addco42_7 = Integer.parseInt(po7co42.getText());
-int Addco43_7 = Integer.parseInt(po7co43.getText());
-int Addco44_7 = Integer.parseInt(po7co44.getText());
-int Addco45_7 = Integer.parseInt(po7co45.getText());
-
-int TotalCo4_7 = Addco41_7 + Addco42_7 + Addco43_7 + Addco44_7 + Addco45_7;
-
-int Addco51_7 = Integer.parseInt(po7co51.getText());
-int Addco52_7 = Integer.parseInt(po7co52.getText());
-int Addco53_7 = Integer.parseInt(po7co53.getText());
-int Addco54_7 = Integer.parseInt(po7co54.getText());
-int Addco55_7 = Integer.parseInt(po7co55.getText());
-
-int TotalCo5_7 = Addco51_7 + Addco52_7 + Addco53_7 + Addco54_7 + Addco55_7;
-
-// Update the Total Weight and CO Total TextFields
-po7wtotal.setText(String.valueOf(TotalWeight_7));
-po7co1total.setText(String.valueOf(TotalCo1_7));
-po7co2total.setText(String.valueOf(TotalCo2_7));
-po7co3total.setText(String.valueOf(TotalCo3_7));
-po7co4total.setText(String.valueOf(TotalCo4_7));
-po7co5total.setText(String.valueOf(TotalCo5_7));
-float AddWeight1_8 = Float.valueOf(po8w1.getText());
-float AddWeight2_8 = Float.valueOf(po8w2.getText());
-float AddWeight3_8 = Float.valueOf(po8w3.getText());
-float AddWeight4_8 = Float.valueOf(po8w4.getText());
-float AddWeight5_8 = Float.valueOf(po8w5.getText());
-
-float TotalWeight_8 = AddWeight1_8 + AddWeight2_8 + AddWeight3_8 + AddWeight4_8 + AddWeight5_8;
-
-int Addco11_8 = Integer.parseInt(po8co11.getText());
-int Addco12_8 = Integer.parseInt(po8co12.getText());
-int Addco13_8 = Integer.parseInt(po8co13.getText());
-int Addco14_8 = Integer.parseInt(po8co14.getText());
-int Addco15_8 = Integer.parseInt(po8co15.getText());
-
-int TotalCo1_8 = Addco11_8 + Addco12_8 + Addco13_8 + Addco14_8 + Addco15_8;
-
-int Addco21_8 = Integer.parseInt(po8co21.getText());
-int Addco22_8 = Integer.parseInt(po8co22.getText());
-int Addco23_8 = Integer.parseInt(po8co23.getText());
-int Addco24_8 = Integer.parseInt(po8co24.getText());
-int Addco25_8 = Integer.parseInt(po8co25.getText());
-
-int TotalCo2_8 = Addco21_8 + Addco22_8 + Addco23_8 + Addco24_8 + Addco25_8;
-
-int Addco31_8 = Integer.parseInt(po8co31.getText());
-int Addco32_8 = Integer.parseInt(po8co32.getText());
-int Addco33_8 = Integer.parseInt(po8co33.getText());
-int Addco34_8 = Integer.parseInt(po8co34.getText());
-int Addco35_8 = Integer.parseInt(po8co35.getText());
-
-int TotalCo3_8 = Addco31_8 + Addco32_8 + Addco33_8 + Addco34_8 + Addco35_8;
-
-int Addco41_8 = Integer.parseInt(po8co41.getText());
-int Addco42_8 = Integer.parseInt(po8co42.getText());
-int Addco43_8 = Integer.parseInt(po8co43.getText());
-int Addco44_8 = Integer.parseInt(po8co44.getText());
-int Addco45_8 = Integer.parseInt(po8co45.getText());
-
-int TotalCo4_8 = Addco41_8 + Addco42_8 + Addco43_8 + Addco44_8 + Addco45_8;
-
-int Addco51_8 = Integer.parseInt(po8co51.getText());
-int Addco52_8 = Integer.parseInt(po8co52.getText());
-int Addco53_8 = Integer.parseInt(po8co53.getText());
-int Addco54_8 = Integer.parseInt(po8co54.getText());
-int Addco55_8 = Integer.parseInt(po8co55.getText());
-
-int TotalCo5_8 = Addco51_8 + Addco52_8 + Addco53_8 + Addco54_8 + Addco55_8;
-
-// Update the Total Weight and CO Total TextFields
-po8wtotal.setText(String.valueOf(TotalWeight_8));
-po8co1total.setText(String.valueOf(TotalCo1_8));
-po8co2total.setText(String.valueOf(TotalCo2_8));
-po8co3total.setText(String.valueOf(TotalCo3_8));
-po8co4total.setText(String.valueOf(TotalCo4_8));
-po8co5total.setText(String.valueOf(TotalCo5_8));
-
-     float AddWeight1_9 = Float.valueOf(po9w1.getText());
-        float AddWeight2_9 = Float.valueOf(po9w2.getText());
-        float AddWeight3_9 = Float.valueOf(po9w3.getText());
-        float AddWeight4_9 = Float.valueOf(po9w4.getText());
-        float AddWeight5_9 = Float.valueOf(po9w5.getText());
-
-        float TotalWeight_9 = AddWeight1_9 + AddWeight2_9 + AddWeight3_9 + AddWeight4_9 + AddWeight5_9;
-
-        int Addco11_9 = Integer.parseInt(po9co11.getText());
-        int Addco12_9 = Integer.parseInt(po9co12.getText());
-        int Addco13_9 = Integer.parseInt(po9co13.getText());
-        int Addco14_9 = Integer.parseInt(po9co14.getText());
-        int Addco15_9 = Integer.parseInt(po9co15.getText());
-
-        int TotalCo1_9 = Addco11_9 + Addco12_9 + Addco13_9 + Addco14_9 + Addco15_9;
-
-        int Addco21_9 = Integer.parseInt(po9co21.getText());
-        int Addco22_9 = Integer.parseInt(po9co22.getText());
-        int Addco23_9 = Integer.parseInt(po9co23.getText());
-        int Addco24_9 = Integer.parseInt(po9co24.getText());
-        int Addco25_9 = Integer.parseInt(po9co25.getText());
-
-        int TotalCo2_9 = Addco21_9 + Addco22_9 + Addco23_9 + Addco24_9 + Addco25_9;
-
-        int Addco31_9 = Integer.parseInt(po9co31.getText());
-        int Addco32_9 = Integer.parseInt(po9co32.getText());
-        int Addco33_9 = Integer.parseInt(po9co33.getText());
-        int Addco34_9 = Integer.parseInt(po9co34.getText());
-        int Addco35_9 = Integer.parseInt(po9co35.getText());
-
-        int TotalCo3_9 = Addco31_9 + Addco32_9 + Addco33_9 + Addco34_9 + Addco35_9;
-
-        int Addco41_9 = Integer.parseInt(po9co41.getText());
-        int Addco42_9 = Integer.parseInt(po9co42.getText());
-        int Addco43_9 = Integer.parseInt(po9co43.getText());
-        int Addco44_9 = Integer.parseInt(po9co44.getText());
-        int Addco45_9 = Integer.parseInt(po9co45.getText());
-
-        int TotalCo4_9 = Addco41_9 + Addco42_9 + Addco43_9 + Addco44_9 + Addco45_9;
-
-        int Addco51_9 = Integer.parseInt(po9co51.getText());
-        int Addco52_9 = Integer.parseInt(po9co52.getText());
-        int Addco53_9 = Integer.parseInt(po9co53.getText());
-        int Addco54_9 = Integer.parseInt(po9co54.getText());
-        int Addco55_9 = Integer.parseInt(po9co55.getText());
-
-        int TotalCo5_9 = Addco51_9 + Addco52_9 + Addco53_9 + Addco54_9 + Addco55_9;
-
-        // Update the Total Weight and CO Total TextFields
-        po9wtotal.setText(String.valueOf(TotalWeight_9));
-        po9co1total.setText(String.valueOf(TotalCo1_9));
-        po9co2total.setText(String.valueOf(TotalCo2_9));
-        po9co3total.setText(String.valueOf(TotalCo3_9));
-        po9co4total.setText(String.valueOf(TotalCo4_9));
-        po9co5total.setText(String.valueOf(TotalCo5_9));
-        
-         float AddWeight1_10 = Float.valueOf(po10w1.getText());
-        float AddWeight2_10 = Float.valueOf(po10w2.getText());
-        float AddWeight3_10 = Float.valueOf(po10w3.getText());
-        float AddWeight4_10 = Float.valueOf(po10w4.getText());
-        float AddWeight5_10 = Float.valueOf(po10w5.getText());
-
-        float TotalWeight_10 = AddWeight1_10 + AddWeight2_10 + AddWeight3_10 + AddWeight4_10 + AddWeight5_10;
-
-        int Addco11_10 = Integer.parseInt(po10co11.getText());
-        int Addco12_10 = Integer.parseInt(po10co12.getText());
-        int Addco13_10 = Integer.parseInt(po10co13.getText());
-        int Addco14_10 = Integer.parseInt(po10co14.getText());
-        int Addco15_10 = Integer.parseInt(po10co15.getText());
-
-        int TotalCo1_10 = Addco11_10 + Addco12_10 + Addco13_10 + Addco14_10 + Addco15_10;
-
-        int Addco21_10 = Integer.parseInt(po10co21.getText());
-        int Addco22_10 = Integer.parseInt(po10co22.getText());
-        int Addco23_10 = Integer.parseInt(po10co23.getText());
-        int Addco24_10 = Integer.parseInt(po10co24.getText());
-        int Addco25_10 = Integer.parseInt(po10co25.getText());
-
-        int TotalCo2_10 = Addco21_10 + Addco22_10 + Addco23_10 + Addco24_10 + Addco25_10;
-
-        int Addco31_10 = Integer.parseInt(po10co31.getText());
-        int Addco32_10 = Integer.parseInt(po10co32.getText());
-        int Addco33_10 = Integer.parseInt(po10co33.getText());
-        int Addco34_10 = Integer.parseInt(po10co34.getText());
-        int Addco35_10 = Integer.parseInt(po10co35.getText());
-
-        int TotalCo3_10 = Addco31_10 + Addco32_10 + Addco33_10 + Addco34_10 + Addco35_10;
-
-        int Addco41_10 = Integer.parseInt(po10co41.getText());
-        int Addco42_10 = Integer.parseInt(po10co42.getText());
-        int Addco43_10 = Integer.parseInt(po10co43.getText());
-        int Addco44_10 = Integer.parseInt(po10co44.getText());
-        int Addco45_10 = Integer.parseInt(po10co45.getText());
-
-        int TotalCo4_10 = Addco41_10 + Addco42_10 + Addco43_10 + Addco44_10 + Addco45_10;
-
-        int Addco51_10 = Integer.parseInt(po10co51.getText());
-        int Addco52_10 = Integer.parseInt(po10co52.getText());
-        int Addco53_10 = Integer.parseInt(po10co53.getText());
-        int Addco54_10 = Integer.parseInt(po10co54.getText());
-        int Addco55_10 = Integer.parseInt(po10co55.getText());
-
-        int TotalCo5_10 = Addco51_10 + Addco52_10 + Addco53_10 + Addco54_10 + Addco55_10;
-
-        // Update the Total Weight and CO Total TextFields
-        po10wtotal.setText(String.valueOf(TotalWeight_10));
-        po10co1total.setText(String.valueOf(TotalCo1_10));
-        po10co2total.setText(String.valueOf(TotalCo2_10));
-        po10co3total.setText(String.valueOf(TotalCo3_10));
-        po10co4total.setText(String.valueOf(TotalCo4_10));
-        po10co5total.setText(String.valueOf(TotalCo5_10));
-         float AddWeight1_11 = Float.valueOf(po11w1.getText());
-        float AddWeight2_11 = Float.valueOf(po11w2.getText());
-        float AddWeight3_11 = Float.valueOf(po11w3.getText());
-        float AddWeight4_11 = Float.valueOf(po11w4.getText());
-        float AddWeight5_11 = Float.valueOf(po11w5.getText());
-
-        float TotalWeight_11 = AddWeight1_11 + AddWeight2_11 + AddWeight3_11 + AddWeight4_11 + AddWeight5_11;
-
-        int Addco11_11 = Integer.parseInt(po11co11.getText());
-        int Addco12_11 = Integer.parseInt(po11co12.getText());
-        int Addco13_11 = Integer.parseInt(po11co13.getText());
-        int Addco14_11 = Integer.parseInt(po11co14.getText());
-        int Addco15_11 = Integer.parseInt(po11co15.getText());
-
-        int TotalCo1_11 = Addco11_11 + Addco12_11 + Addco13_11 + Addco14_11 + Addco15_11;
-
-        int Addco21_11 = Integer.parseInt(po11co21.getText());
-        int Addco22_11 = Integer.parseInt(po11co22.getText());
-        int Addco23_11 = Integer.parseInt(po11co23.getText());
-        int Addco24_11 = Integer.parseInt(po11co24.getText());
-        int Addco25_11 = Integer.parseInt(po11co25.getText());
-
-        int TotalCo2_11 = Addco21_11 + Addco22_11 + Addco23_11 + Addco24_11 + Addco25_11;
-
-        int Addco31_11 = Integer.parseInt(po11co31.getText());
-        int Addco32_11 = Integer.parseInt(po11co32.getText());
-        int Addco33_11 = Integer.parseInt(po11co33.getText());
-        int Addco34_11 = Integer.parseInt(po11co34.getText());
-        int Addco35_11 = Integer.parseInt(po11co35.getText());
-
-        int TotalCo3_11 = Addco31_11 + Addco32_11 + Addco33_11 + Addco34_11 + Addco35_11;
-
-        int Addco41_11 = Integer.parseInt(po11co41.getText());
-        int Addco42_11 = Integer.parseInt(po11co42.getText());
-        int Addco43_11 = Integer.parseInt(po11co43.getText());
-        int Addco44_11 = Integer.parseInt(po11co44.getText());
-        int Addco45_11 = Integer.parseInt(po11co45.getText());
-
-        int TotalCo4_11 = Addco41_11 + Addco42_11 + Addco43_11 + Addco44_11 + Addco45_11;
-
-        int Addco51_11 = Integer.parseInt(po11co51.getText());
-        int Addco52_11 = Integer.parseInt(po11co52.getText());
-        int Addco53_11 = Integer.parseInt(po11co53.getText());
-        int Addco54_11 = Integer.parseInt(po11co54.getText());
-        int Addco55_11 = Integer.parseInt(po11co55.getText());
-
-        int TotalCo5_11 = Addco51_11 + Addco52_11 + Addco53_11 + Addco54_11 + Addco55_11;
-
-        // Update the Total Weight and CO Total TextFields
-        po11wtotal.setText(String.valueOf(TotalWeight_11));
-        po11co1total.setText(String.valueOf(TotalCo1_11));
-        po11co2total.setText(String.valueOf(TotalCo2_11));
-        po11co3total.setText(String.valueOf(TotalCo3_11));
-        po11co4total.setText(String.valueOf(TotalCo4_11));
-        po11co5total.setText(String.valueOf(TotalCo5_11));
-        
-        float AddWeight1_12 = Float.valueOf(po12w1.getText());
-        float AddWeight2_12 = Float.valueOf(po12w2.getText());
-        float AddWeight3_12 = Float.valueOf(po12w3.getText());
-        float AddWeight4_12 = Float.valueOf(po12w4.getText());
-        float AddWeight5_12 = Float.valueOf(po12w5.getText());
-
-        float TotalWeight_12 = AddWeight1_12 + AddWeight2_12 + AddWeight3_12 + AddWeight4_12 + AddWeight5_12;
-
-        int Addco11_12 = Integer.parseInt(po12co11.getText());
-        int Addco12_12 = Integer.parseInt(po12co12.getText());
-        int Addco13_12 = Integer.parseInt(po12co13.getText());
-        int Addco14_12 = Integer.parseInt(po12co14.getText());
-        int Addco15_12 = Integer.parseInt(po12co15.getText());
-
-        int TotalCo1_12 = Addco11_12 + Addco12_12 + Addco13_12 + Addco14_12 + Addco15_12;
-
-        int Addco21_12 = Integer.parseInt(po12co21.getText());
-        int Addco22_12 = Integer.parseInt(po12co22.getText());
-        int Addco23_12 = Integer.parseInt(po12co23.getText());
-        int Addco24_12 = Integer.parseInt(po12co24.getText());
-        int Addco25_12 = Integer.parseInt(po12co25.getText());
-
-        int TotalCo2_12 = Addco21_12 + Addco22_12 + Addco23_12 + Addco24_12 + Addco25_12;
-
-        int Addco31_12 = Integer.parseInt(po12co31.getText());
-        int Addco32_12 = Integer.parseInt(po12co32.getText());
-        int Addco33_12 = Integer.parseInt(po12co33.getText());
-        int Addco34_12 = Integer.parseInt(po12co34.getText());
-        int Addco35_12 = Integer.parseInt(po12co35.getText());
-
-        int TotalCo3_12 = Addco31_12 + Addco32_12 + Addco33_12 + Addco34_12 + Addco35_12;
-
-        int Addco41_12 = Integer.parseInt(po12co41.getText());
-        int Addco42_12 = Integer.parseInt(po12co42.getText());
-        int Addco43_12 = Integer.parseInt(po12co43.getText());
-        int Addco44_12 = Integer.parseInt(po12co44.getText());
-        int Addco45_12 = Integer.parseInt(po12co45.getText());
-
-        int TotalCo4_12 = Addco41_12 + Addco42_12 + Addco43_12 + Addco44_12 + Addco45_12;
-
-        int Addco51_12 = Integer.parseInt(po12co51.getText());
-        int Addco52_12 = Integer.parseInt(po12co52.getText());
-        int Addco53_12 = Integer.parseInt(po12co53.getText());
-        int Addco54_12 = Integer.parseInt(po12co54.getText());
-        int Addco55_12 = Integer.parseInt(po12co55.getText());
-
-        int TotalCo5_12 = Addco51_12 + Addco52_12 + Addco53_12 + Addco54_12 + Addco55_12;
-
-        // Update the Total Weight and CO Total TextFields
-        po12wtotal.setText(String.valueOf(TotalWeight_12));
-        po12co1total.setText(String.valueOf(TotalCo1_12));
-        po12co2total.setText(String.valueOf(TotalCo2_12));
-        po12co3total.setText(String.valueOf(TotalCo3_12));
-        po12co4total.setText(String.valueOf(TotalCo4_12));
-        po12co5total.setText(String.valueOf(TotalCo5_12));
-
-
+// float AddWeight1_2 = Float.valueOf(po2w1.getText());
+//    float AddWeight2_2 = Float.valueOf(po2w2.getText());
+//    float AddWeight3_2 = Float.valueOf(po2w3.getText());
+//    float AddWeight4_2 = Float.valueOf(po2w4.getText());
+//    float AddWeight5_2 = Float.valueOf(po2w5.getText());
+//
+//    float TotalWeight_2 = AddWeight1_2 + AddWeight2_2 + AddWeight3_2 + AddWeight4_2 + AddWeight5_2;
+//
+//    int Addco11_2 = Integer.parseInt(po2co11.getText());
+//    int Addco12_2 = Integer.parseInt(po2co12.getText());
+//    int Addco13_2 = Integer.parseInt(po2co13.getText());
+//    int Addco14_2 = Integer.parseInt(po2co14.getText());
+//    int Addco15_2 = Integer.parseInt(po2co15.getText());
+//
+//    int TotalCo1_2 = Addco11_2 + Addco12_2 + Addco13_2 + Addco14_2 + Addco15_2;
+//
+//    int Addco21_2 = Integer.parseInt(po2co21.getText());
+//    int Addco22_2 = Integer.parseInt(po2co22.getText());
+//    int Addco23_2 = Integer.parseInt(po2co23.getText());
+//    int Addco24_2 = Integer.parseInt(po2co24.getText());
+//    int Addco25_2 = Integer.parseInt(po2co25.getText());
+//
+//    int TotalCo2_2 = Addco21_2 + Addco22_2 + Addco23_2 + Addco24_2 + Addco25_2;
+//
+//    int Addco31_2 = Integer.parseInt(po2co31.getText());
+//    int Addco32_2 = Integer.parseInt(po2co32.getText());
+//    int Addco33_2 = Integer.parseInt(po2co33.getText());
+//    int Addco34_2 = Integer.parseInt(po2co34.getText());
+//    int Addco35_2 = Integer.parseInt(po2co35.getText());
+//
+//    int TotalCo3_2 = Addco31_2 + Addco32_2 + Addco33_2 + Addco34_2 + Addco35_2;
+//
+//    int Addco41_2 = Integer.parseInt(po2co41.getText());
+//    int Addco42_2 = Integer.parseInt(po2co42.getText());
+//    int Addco43_2 = Integer.parseInt(po2co43.getText());
+//    int Addco44_2 = Integer.parseInt(po2co44.getText());
+//    int Addco45_2 = Integer.parseInt(po2co45.getText());
+//
+//    int TotalCo4_2 = Addco41_2 + Addco42_2 + Addco43_2 + Addco44_2 + Addco45_2;
+//
+//    int Addco51_2 = Integer.parseInt(po2co51.getText());
+//    int Addco52_2 = Integer.parseInt(po2co52.getText());
+//    int Addco53_2 = Integer.parseInt(po2co53.getText());
+//    int Addco54_2 = Integer.parseInt(po2co54.getText());
+//    int Addco55_2 = Integer.parseInt(po2co55.getText());
+//
+//    int TotalCo5_2 = Addco51_2 + Addco52_2 + Addco53_2 + Addco54_2 + Addco55_2;
+//
+//    po2wtotal.setText(String.valueOf(TotalWeight_2));
+//    po2co1total.setText(String.valueOf(TotalCo1_2));
+//    po2co2total.setText(String.valueOf(TotalCo2_2));
+//    po2co3total.setText(String.valueOf(TotalCo3_2));
+//    po2co4total.setText(String.valueOf(TotalCo4_2));
+//    po2co5total.setText(String.valueOf(TotalCo5_2));
+//
+//    
+////     for program 3
+//    float AddWeight1_3 = Float.valueOf(po3w1.getText());
+//    float AddWeight2_3 = Float.valueOf(po3w2.getText());
+//    float AddWeight3_3 = Float.valueOf(po3w3.getText());
+//    float AddWeight4_3 = Float.valueOf(po3w4.getText());
+//    float AddWeight5_3 = Float.valueOf(po3w5.getText());
+//
+//    float TotalWeight_3 = AddWeight1_3 + AddWeight2_3 + AddWeight3_3 + AddWeight4_3 + AddWeight5_3;
+//
+//    int Addco11_3 = Integer.parseInt(po3co11.getText());
+//    int Addco12_3 = Integer.parseInt(po3co12.getText());
+//    int Addco13_3 = Integer.parseInt(po3co13.getText());
+//    int Addco14_3 = Integer.parseInt(po3co14.getText());
+//    int Addco15_3 = Integer.parseInt(po3co15.getText());
+//
+//    int TotalCo1_3 = Addco11_3 + Addco12_3 + Addco13_3 + Addco14_3 + Addco15_3;
+//
+//    int Addco21_3 = Integer.parseInt(po3co21.getText());
+//    int Addco22_3 = Integer.parseInt(po3co22.getText());
+//    int Addco23_3 = Integer.parseInt(po3co23.getText());
+//    int Addco24_3 = Integer.parseInt(po3co24.getText());
+//    int Addco25_3 = Integer.parseInt(po3co25.getText());
+//
+//    int TotalCo2_3 = Addco21_3 + Addco22_3 + Addco23_3 + Addco24_3 + Addco25_3;
+//
+//    int Addco31_3 = Integer.parseInt(po3co31.getText());
+//    int Addco32_3 = Integer.parseInt(po3co32.getText());
+//    int Addco33_3 = Integer.parseInt(po3co33.getText());
+//    int Addco34_3 = Integer.parseInt(po3co34.getText());
+//    int Addco35_3 = Integer.parseInt(po3co35.getText());
+//
+//    int TotalCo3_3 = Addco31_3 + Addco32_3 + Addco33_3 + Addco34_3 + Addco35_3;
+//
+//    int Addco41_3 = Integer.parseInt(po3co41.getText());
+//    int Addco42_3 = Integer.parseInt(po3co42.getText());
+//    int Addco43_3 = Integer.parseInt(po3co43.getText());
+//    int Addco44_3 = Integer.parseInt(po3co44.getText());
+//    int Addco45_3 = Integer.parseInt(po3co45.getText());
+//
+//    int TotalCo4_3 = Addco41_3 + Addco42_3 + Addco43_3 + Addco44_3 + Addco45_3;
+//
+//    int Addco51_3 = Integer.parseInt(po3co51.getText());
+//    int Addco52_3 = Integer.parseInt(po3co52.getText());
+//    int Addco53_3 = Integer.parseInt(po3co53.getText());
+//    int Addco54_3 = Integer.parseInt(po3co54.getText());
+//    int Addco55_3 = Integer.parseInt(po3co55.getText());
+//
+//    int TotalCo5_3 = Addco51_3 + Addco52_3 + Addco53_3 + Addco54_3 + Addco55_3;
+//
+//    po3wtotal.setText(String.valueOf(TotalWeight_3));
+//    po3co1total.setText(String.valueOf(TotalCo1_3));
+//    po3co2total.setText(String.valueOf(TotalCo2_3));
+//    po3co3total.setText(String.valueOf(TotalCo3_3));
+//    po3co4total.setText(String.valueOf(TotalCo4_3));
+//    po3co5total.setText(String.valueOf(TotalCo5_3));
+//    
+//       float AddWeight1_4 = Float.valueOf(po4w1.getText());
+//    float AddWeight2_4 = Float.valueOf(po4w2.getText());
+//    float AddWeight3_4 = Float.valueOf(po4w3.getText());
+//    float AddWeight4_4 = Float.valueOf(po4w4.getText());
+//    float AddWeight5_4 = Float.valueOf(po4w5.getText());
+//
+//    float TotalWeight_4 = AddWeight1_4 + AddWeight2_4 + AddWeight3_4 + AddWeight4_4 + AddWeight5_4;
+//
+//    int Addco11_4 = Integer.parseInt(po4co11.getText());
+//    int Addco12_4 = Integer.parseInt(po4co12.getText());
+//    int Addco13_4 = Integer.parseInt(po4co13.getText());
+//    int Addco14_4 = Integer.parseInt(po4co14.getText());
+//    int Addco15_4 = Integer.parseInt(po4co15.getText());
+//
+//    int TotalCo1_4 = Addco11_4 + Addco12_4 + Addco13_4 + Addco14_4 + Addco15_4;
+//
+//    int Addco21_4 = Integer.parseInt(po4co21.getText());
+//    int Addco22_4 = Integer.parseInt(po4co22.getText());
+//    int Addco23_4 = Integer.parseInt(po4co23.getText());
+//    int Addco24_4 = Integer.parseInt(po4co24.getText());
+//    int Addco25_4 = Integer.parseInt(po4co25.getText());
+//
+//    int TotalCo2_4 = Addco21_4 + Addco22_4 + Addco23_4 + Addco24_4 + Addco25_4;
+//
+//    int Addco31_4 = Integer.parseInt(po4co31.getText());
+//    int Addco32_4 = Integer.parseInt(po4co32.getText());
+//    int Addco33_4 = Integer.parseInt(po4co33.getText());
+//    int Addco34_4 = Integer.parseInt(po4co34.getText());
+//    int Addco35_4 = Integer.parseInt(po4co35.getText());
+//
+//    int TotalCo3_4 = Addco31_4 + Addco32_4 + Addco33_4 + Addco34_4 + Addco35_4;
+//
+//    int Addco41_4 = Integer.parseInt(po4co41.getText());
+//    int Addco42_4 = Integer.parseInt(po4co42.getText());
+//    int Addco43_4 = Integer.parseInt(po4co43.getText());
+//    int Addco44_4 = Integer.parseInt(po4co44.getText());
+//    int Addco45_4 = Integer.parseInt(po4co45.getText());
+//
+//    int TotalCo4_4 = Addco41_4 + Addco42_4 + Addco43_4 + Addco44_4 + Addco45_4;
+//
+//    int Addco51_4 = Integer.parseInt(po4co51.getText());
+//    int Addco52_4 = Integer.parseInt(po4co52.getText());
+//    int Addco53_4 = Integer.parseInt(po4co53.getText());
+//    int Addco54_4 = Integer.parseInt(po4co54.getText());
+//    int Addco55_4 = Integer.parseInt(po4co55.getText());
+//
+//    int TotalCo5_4 = Addco51_4 + Addco52_4 + Addco53_4 + Addco54_4 + Addco55_4;
+//
+//    // Update the Total Weight and CO Total TextFields
+//    po4wtotal.setText(String.valueOf(TotalWeight_4));
+//    po4co1total.setText(String.valueOf(TotalCo1_4));
+//    po4co2total.setText(String.valueOf(TotalCo2_4));
+//    po4co3total.setText(String.valueOf(TotalCo3_4));
+//    po4co4total.setText(String.valueOf(TotalCo4_4));
+//    po4co5total.setText(String.valueOf(TotalCo5_4));
+//
+//     float AddWeight1_5 = Float.valueOf(po5w1.getText());
+//    float AddWeight2_5 = Float.valueOf(po5w2.getText());
+//    float AddWeight3_5 = Float.valueOf(po5w3.getText());
+//    float AddWeight4_5 = Float.valueOf(po5w4.getText());
+//    float AddWeight5_5 = Float.valueOf(po5w5.getText());
+//
+//    float TotalWeight_5 = AddWeight1_5 + AddWeight2_5 + AddWeight3_5 + AddWeight4_5 + AddWeight5_5;
+//
+//    int Addco11_5 = Integer.parseInt(po5co11.getText());
+//    int Addco12_5 = Integer.parseInt(po5co12.getText());
+//    int Addco13_5 = Integer.parseInt(po5co13.getText());
+//    int Addco14_5 = Integer.parseInt(po5co14.getText());
+//    int Addco15_5 = Integer.parseInt(po5co15.getText());
+//
+//    int TotalCo1_5 = Addco11_5 + Addco12_5 + Addco13_5 + Addco14_5 + Addco15_5;
+//
+//    int Addco21_5 = Integer.parseInt(po5co21.getText());
+//    int Addco22_5 = Integer.parseInt(po5co22.getText());
+//    int Addco23_5 = Integer.parseInt(po5co23.getText());
+//    int Addco24_5 = Integer.parseInt(po5co24.getText());
+//    int Addco25_5 = Integer.parseInt(po5co25.getText());
+//
+//    int TotalCo2_5 = Addco21_5 + Addco22_5 + Addco23_5 + Addco24_5 + Addco25_5;
+//
+//    int Addco31_5 = Integer.parseInt(po5co31.getText());
+//    int Addco32_5 = Integer.parseInt(po5co32.getText());
+//    int Addco33_5 = Integer.parseInt(po5co33.getText());
+//    int Addco34_5 = Integer.parseInt(po5co34.getText());
+//    int Addco35_5 = Integer.parseInt(po5co35.getText());
+//
+//    int TotalCo3_5 = Addco31_5 + Addco32_5 + Addco33_5 + Addco34_5 + Addco35_5;
+//
+//    int Addco41_5 = Integer.parseInt(po5co41.getText());
+//    int Addco42_5 = Integer.parseInt(po5co42.getText());
+//    int Addco43_5 = Integer.parseInt(po5co43.getText());
+//    int Addco44_5 = Integer.parseInt(po5co44.getText());
+//    int Addco45_5 = Integer.parseInt(po5co45.getText());
+//
+//    int TotalCo4_5 = Addco41_5 + Addco42_5 + Addco43_5 + Addco44_5 + Addco45_5;
+//
+//    int Addco51_5 = Integer.parseInt(po5co51.getText());
+//    int Addco52_5 = Integer.parseInt(po5co52.getText());
+//    int Addco53_5 = Integer.parseInt(po5co53.getText());
+//    int Addco54_5 = Integer.parseInt(po5co54.getText());
+//    int Addco55_5 = Integer.parseInt(po5co55.getText());
+//
+//    int TotalCo5_5 = Addco51_5 + Addco52_5 + Addco53_5 + Addco54_5 + Addco55_5;
+//
+//    // Update the Total Weight and CO Total TextFields
+//    po5wtotal.setText(String.valueOf(TotalWeight_5));
+//    po5co1total.setText(String.valueOf(TotalCo1_5));
+//    po5co2total.setText(String.valueOf(TotalCo2_5));
+//    po5co3total.setText(String.valueOf(TotalCo3_5));
+//    po5co4total.setText(String.valueOf(TotalCo4_5));
+//    po5co5total.setText(String.valueOf(TotalCo5_5));
+//
+//float AddWeight1_6 = Float.valueOf(po6w1.getText());
+//float AddWeight2_6 = Float.valueOf(po6w2.getText());
+//float AddWeight3_6 = Float.valueOf(po6w3.getText());
+//float AddWeight4_6 = Float.valueOf(po6w4.getText());
+//float AddWeight5_6 = Float.valueOf(po6w5.getText());
+//
+//float TotalWeight_6 = AddWeight1_6 + AddWeight2_6 + AddWeight3_6 + AddWeight4_6 + AddWeight5_6;
+//
+//int Addco11_6 = Integer.parseInt(po6co11.getText());
+//int Addco12_6 = Integer.parseInt(po6co12.getText());
+//int Addco13_6 = Integer.parseInt(po6co13.getText());
+//int Addco14_6 = Integer.parseInt(po6co14.getText());
+//int Addco15_6 = Integer.parseInt(po6co15.getText());
+//
+//int TotalCo1_6 = Addco11_6 + Addco12_6 + Addco13_6 + Addco14_6 + Addco15_6;
+//
+//int Addco21_6 = Integer.parseInt(po6co21.getText());
+//int Addco22_6 = Integer.parseInt(po6co22.getText());
+//int Addco23_6 = Integer.parseInt(po6co23.getText());
+//int Addco24_6 = Integer.parseInt(po6co24.getText());
+//int Addco25_6 = Integer.parseInt(po6co25.getText());
+//
+//int TotalCo2_6 = Addco21_6 + Addco22_6 + Addco23_6 + Addco24_6 + Addco25_6;
+//
+//int Addco31_6 = Integer.parseInt(po6co31.getText());
+//int Addco32_6 = Integer.parseInt(po6co32.getText());
+//int Addco33_6 = Integer.parseInt(po6co33.getText());
+//int Addco34_6 = Integer.parseInt(po6co34.getText());
+//int Addco35_6 = Integer.parseInt(po6co35.getText());
+//
+//int TotalCo3_6 = Addco31_6 + Addco32_6 + Addco33_6 + Addco34_6 + Addco35_6;
+//
+//int Addco41_6 = Integer.parseInt(po6co41.getText());
+//int Addco42_6 = Integer.parseInt(po6co42.getText());
+//int Addco43_6 = Integer.parseInt(po6co43.getText());
+//int Addco44_6 = Integer.parseInt(po6co44.getText());
+//int Addco45_6 = Integer.parseInt(po6co45.getText());
+//
+//int TotalCo4_6 = Addco41_6 + Addco42_6 + Addco43_6 + Addco44_6 + Addco45_6;
+//
+//int Addco51_6 = Integer.parseInt(po6co51.getText());
+//int Addco52_6 = Integer.parseInt(po6co52.getText());
+//int Addco53_6 = Integer.parseInt(po6co53.getText());
+//int Addco54_6 = Integer.parseInt(po6co54.getText());
+//int Addco55_6 = Integer.parseInt(po6co55.getText());
+//
+//int TotalCo5_6 = Addco51_6 + Addco52_6 + Addco53_6 + Addco54_6 + Addco55_6;
+//
+//// Update the Total Weight and CO Total TextFields
+//po6wtotal.setText(String.valueOf(TotalWeight_6));
+//po6co1total.setText(String.valueOf(TotalCo1_6));
+//po6co2total.setText(String.valueOf(TotalCo2_6));
+//po6co3total.setText(String.valueOf(TotalCo3_6));
+//po6co4total.setText(String.valueOf(TotalCo4_6));
+//po6co5total.setText(String.valueOf(TotalCo5_6));
+//float AddWeight1_7 = Float.valueOf(po7w1.getText());
+//float AddWeight2_7 = Float.valueOf(po7w2.getText());
+//float AddWeight3_7 = Float.valueOf(po7w3.getText());
+//float AddWeight4_7 = Float.valueOf(po7w4.getText());
+//float AddWeight5_7 = Float.valueOf(po7w5.getText());
+//
+//float TotalWeight_7 = AddWeight1_7 + AddWeight2_7 + AddWeight3_7 + AddWeight4_7 + AddWeight5_7;
+//
+//int Addco11_7 = Integer.parseInt(po7co11.getText());
+//int Addco12_7 = Integer.parseInt(po7co12.getText());
+//int Addco13_7 = Integer.parseInt(po7co13.getText());
+//int Addco14_7 = Integer.parseInt(po7co14.getText());
+//int Addco15_7 = Integer.parseInt(po7co15.getText());
+//
+//int TotalCo1_7 = Addco11_7 + Addco12_7 + Addco13_7 + Addco14_7 + Addco15_7;
+//
+//int Addco21_7 = Integer.parseInt(po7co21.getText());
+//int Addco22_7 = Integer.parseInt(po7co22.getText());
+//int Addco23_7 = Integer.parseInt(po7co23.getText());
+//int Addco24_7 = Integer.parseInt(po7co24.getText());
+//int Addco25_7 = Integer.parseInt(po7co25.getText());
+//
+//int TotalCo2_7 = Addco21_7 + Addco22_7 + Addco23_7 + Addco24_7 + Addco25_7;
+//
+//int Addco31_7 = Integer.parseInt(po7co31.getText());
+//int Addco32_7 = Integer.parseInt(po7co32.getText());
+//int Addco33_7 = Integer.parseInt(po7co33.getText());
+//int Addco34_7 = Integer.parseInt(po7co34.getText());
+//int Addco35_7 = Integer.parseInt(po7co35.getText());
+//
+//int TotalCo3_7 = Addco31_7 + Addco32_7 + Addco33_7 + Addco34_7 + Addco35_7;
+//
+//int Addco41_7 = Integer.parseInt(po7co41.getText());
+//int Addco42_7 = Integer.parseInt(po7co42.getText());
+//int Addco43_7 = Integer.parseInt(po7co43.getText());
+//int Addco44_7 = Integer.parseInt(po7co44.getText());
+//int Addco45_7 = Integer.parseInt(po7co45.getText());
+//
+//int TotalCo4_7 = Addco41_7 + Addco42_7 + Addco43_7 + Addco44_7 + Addco45_7;
+//
+//int Addco51_7 = Integer.parseInt(po7co51.getText());
+//int Addco52_7 = Integer.parseInt(po7co52.getText());
+//int Addco53_7 = Integer.parseInt(po7co53.getText());
+//int Addco54_7 = Integer.parseInt(po7co54.getText());
+//int Addco55_7 = Integer.parseInt(po7co55.getText());
+//
+//int TotalCo5_7 = Addco51_7 + Addco52_7 + Addco53_7 + Addco54_7 + Addco55_7;
+//
+//// Update the Total Weight and CO Total TextFields
+//po7wtotal.setText(String.valueOf(TotalWeight_7));
+//po7co1total.setText(String.valueOf(TotalCo1_7));
+//po7co2total.setText(String.valueOf(TotalCo2_7));
+//po7co3total.setText(String.valueOf(TotalCo3_7));
+//po7co4total.setText(String.valueOf(TotalCo4_7));
+//po7co5total.setText(String.valueOf(TotalCo5_7));
+//float AddWeight1_8 = Float.valueOf(po8w1.getText());
+//float AddWeight2_8 = Float.valueOf(po8w2.getText());
+//float AddWeight3_8 = Float.valueOf(po8w3.getText());
+//float AddWeight4_8 = Float.valueOf(po8w4.getText());
+//float AddWeight5_8 = Float.valueOf(po8w5.getText());
+//
+//float TotalWeight_8 = AddWeight1_8 + AddWeight2_8 + AddWeight3_8 + AddWeight4_8 + AddWeight5_8;
+//
+//int Addco11_8 = Integer.parseInt(po8co11.getText());
+//int Addco12_8 = Integer.parseInt(po8co12.getText());
+//int Addco13_8 = Integer.parseInt(po8co13.getText());
+//int Addco14_8 = Integer.parseInt(po8co14.getText());
+//int Addco15_8 = Integer.parseInt(po8co15.getText());
+//
+//int TotalCo1_8 = Addco11_8 + Addco12_8 + Addco13_8 + Addco14_8 + Addco15_8;
+//
+//int Addco21_8 = Integer.parseInt(po8co21.getText());
+//int Addco22_8 = Integer.parseInt(po8co22.getText());
+//int Addco23_8 = Integer.parseInt(po8co23.getText());
+//int Addco24_8 = Integer.parseInt(po8co24.getText());
+//int Addco25_8 = Integer.parseInt(po8co25.getText());
+//
+//int TotalCo2_8 = Addco21_8 + Addco22_8 + Addco23_8 + Addco24_8 + Addco25_8;
+//
+//int Addco31_8 = Integer.parseInt(po8co31.getText());
+//int Addco32_8 = Integer.parseInt(po8co32.getText());
+//int Addco33_8 = Integer.parseInt(po8co33.getText());
+//int Addco34_8 = Integer.parseInt(po8co34.getText());
+//int Addco35_8 = Integer.parseInt(po8co35.getText());
+//
+//int TotalCo3_8 = Addco31_8 + Addco32_8 + Addco33_8 + Addco34_8 + Addco35_8;
+//
+//int Addco41_8 = Integer.parseInt(po8co41.getText());
+//int Addco42_8 = Integer.parseInt(po8co42.getText());
+//int Addco43_8 = Integer.parseInt(po8co43.getText());
+//int Addco44_8 = Integer.parseInt(po8co44.getText());
+//int Addco45_8 = Integer.parseInt(po8co45.getText());
+//
+//int TotalCo4_8 = Addco41_8 + Addco42_8 + Addco43_8 + Addco44_8 + Addco45_8;
+//
+//int Addco51_8 = Integer.parseInt(po8co51.getText());
+//int Addco52_8 = Integer.parseInt(po8co52.getText());
+//int Addco53_8 = Integer.parseInt(po8co53.getText());
+//int Addco54_8 = Integer.parseInt(po8co54.getText());
+//int Addco55_8 = Integer.parseInt(po8co55.getText());
+//
+//int TotalCo5_8 = Addco51_8 + Addco52_8 + Addco53_8 + Addco54_8 + Addco55_8;
+//
+//// Update the Total Weight and CO Total TextFields
+//po8wtotal.setText(String.valueOf(TotalWeight_8));
+//po8co1total.setText(String.valueOf(TotalCo1_8));
+//po8co2total.setText(String.valueOf(TotalCo2_8));
+//po8co3total.setText(String.valueOf(TotalCo3_8));
+//po8co4total.setText(String.valueOf(TotalCo4_8));
+//po8co5total.setText(String.valueOf(TotalCo5_8));
+//
+//     float AddWeight1_9 = Float.valueOf(po9w1.getText());
+//        float AddWeight2_9 = Float.valueOf(po9w2.getText());
+//        float AddWeight3_9 = Float.valueOf(po9w3.getText());
+//        float AddWeight4_9 = Float.valueOf(po9w4.getText());
+//        float AddWeight5_9 = Float.valueOf(po9w5.getText());
+//
+//        float TotalWeight_9 = AddWeight1_9 + AddWeight2_9 + AddWeight3_9 + AddWeight4_9 + AddWeight5_9;
+//
+//        int Addco11_9 = Integer.parseInt(po9co11.getText());
+//        int Addco12_9 = Integer.parseInt(po9co12.getText());
+//        int Addco13_9 = Integer.parseInt(po9co13.getText());
+//        int Addco14_9 = Integer.parseInt(po9co14.getText());
+//        int Addco15_9 = Integer.parseInt(po9co15.getText());
+//
+//        int TotalCo1_9 = Addco11_9 + Addco12_9 + Addco13_9 + Addco14_9 + Addco15_9;
+//
+//        int Addco21_9 = Integer.parseInt(po9co21.getText());
+//        int Addco22_9 = Integer.parseInt(po9co22.getText());
+//        int Addco23_9 = Integer.parseInt(po9co23.getText());
+//        int Addco24_9 = Integer.parseInt(po9co24.getText());
+//        int Addco25_9 = Integer.parseInt(po9co25.getText());
+//
+//        int TotalCo2_9 = Addco21_9 + Addco22_9 + Addco23_9 + Addco24_9 + Addco25_9;
+//
+//        int Addco31_9 = Integer.parseInt(po9co31.getText());
+//        int Addco32_9 = Integer.parseInt(po9co32.getText());
+//        int Addco33_9 = Integer.parseInt(po9co33.getText());
+//        int Addco34_9 = Integer.parseInt(po9co34.getText());
+//        int Addco35_9 = Integer.parseInt(po9co35.getText());
+//
+//        int TotalCo3_9 = Addco31_9 + Addco32_9 + Addco33_9 + Addco34_9 + Addco35_9;
+//
+//        int Addco41_9 = Integer.parseInt(po9co41.getText());
+//        int Addco42_9 = Integer.parseInt(po9co42.getText());
+//        int Addco43_9 = Integer.parseInt(po9co43.getText());
+//        int Addco44_9 = Integer.parseInt(po9co44.getText());
+//        int Addco45_9 = Integer.parseInt(po9co45.getText());
+//
+//        int TotalCo4_9 = Addco41_9 + Addco42_9 + Addco43_9 + Addco44_9 + Addco45_9;
+//
+//        int Addco51_9 = Integer.parseInt(po9co51.getText());
+//        int Addco52_9 = Integer.parseInt(po9co52.getText());
+//        int Addco53_9 = Integer.parseInt(po9co53.getText());
+//        int Addco54_9 = Integer.parseInt(po9co54.getText());
+//        int Addco55_9 = Integer.parseInt(po9co55.getText());
+//
+//        int TotalCo5_9 = Addco51_9 + Addco52_9 + Addco53_9 + Addco54_9 + Addco55_9;
+//
+//        // Update the Total Weight and CO Total TextFields
+//        po9wtotal.setText(String.valueOf(TotalWeight_9));
+//        po9co1total.setText(String.valueOf(TotalCo1_9));
+//        po9co2total.setText(String.valueOf(TotalCo2_9));
+//        po9co3total.setText(String.valueOf(TotalCo3_9));
+//        po9co4total.setText(String.valueOf(TotalCo4_9));
+//        po9co5total.setText(String.valueOf(TotalCo5_9));
+//        
+//         float AddWeight1_10 = Float.valueOf(po10w1.getText());
+//        float AddWeight2_10 = Float.valueOf(po10w2.getText());
+//        float AddWeight3_10 = Float.valueOf(po10w3.getText());
+//        float AddWeight4_10 = Float.valueOf(po10w4.getText());
+//        float AddWeight5_10 = Float.valueOf(po10w5.getText());
+//
+//        float TotalWeight_10 = AddWeight1_10 + AddWeight2_10 + AddWeight3_10 + AddWeight4_10 + AddWeight5_10;
+//
+//        int Addco11_10 = Integer.parseInt(po10co11.getText());
+//        int Addco12_10 = Integer.parseInt(po10co12.getText());
+//        int Addco13_10 = Integer.parseInt(po10co13.getText());
+//        int Addco14_10 = Integer.parseInt(po10co14.getText());
+//        int Addco15_10 = Integer.parseInt(po10co15.getText());
+//
+//        int TotalCo1_10 = Addco11_10 + Addco12_10 + Addco13_10 + Addco14_10 + Addco15_10;
+//
+//        int Addco21_10 = Integer.parseInt(po10co21.getText());
+//        int Addco22_10 = Integer.parseInt(po10co22.getText());
+//        int Addco23_10 = Integer.parseInt(po10co23.getText());
+//        int Addco24_10 = Integer.parseInt(po10co24.getText());
+//        int Addco25_10 = Integer.parseInt(po10co25.getText());
+//
+//        int TotalCo2_10 = Addco21_10 + Addco22_10 + Addco23_10 + Addco24_10 + Addco25_10;
+//
+//        int Addco31_10 = Integer.parseInt(po10co31.getText());
+//        int Addco32_10 = Integer.parseInt(po10co32.getText());
+//        int Addco33_10 = Integer.parseInt(po10co33.getText());
+//        int Addco34_10 = Integer.parseInt(po10co34.getText());
+//        int Addco35_10 = Integer.parseInt(po10co35.getText());
+//
+//        int TotalCo3_10 = Addco31_10 + Addco32_10 + Addco33_10 + Addco34_10 + Addco35_10;
+//
+//        int Addco41_10 = Integer.parseInt(po10co41.getText());
+//        int Addco42_10 = Integer.parseInt(po10co42.getText());
+//        int Addco43_10 = Integer.parseInt(po10co43.getText());
+//        int Addco44_10 = Integer.parseInt(po10co44.getText());
+//        int Addco45_10 = Integer.parseInt(po10co45.getText());
+//
+//        int TotalCo4_10 = Addco41_10 + Addco42_10 + Addco43_10 + Addco44_10 + Addco45_10;
+//
+//        int Addco51_10 = Integer.parseInt(po10co51.getText());
+//        int Addco52_10 = Integer.parseInt(po10co52.getText());
+//        int Addco53_10 = Integer.parseInt(po10co53.getText());
+//        int Addco54_10 = Integer.parseInt(po10co54.getText());
+//        int Addco55_10 = Integer.parseInt(po10co55.getText());
+//
+//        int TotalCo5_10 = Addco51_10 + Addco52_10 + Addco53_10 + Addco54_10 + Addco55_10;
+//
+//        // Update the Total Weight and CO Total TextFields
+//        po10wtotal.setText(String.valueOf(TotalWeight_10));
+//        po10co1total.setText(String.valueOf(TotalCo1_10));
+//        po10co2total.setText(String.valueOf(TotalCo2_10));
+//        po10co3total.setText(String.valueOf(TotalCo3_10));
+//        po10co4total.setText(String.valueOf(TotalCo4_10));
+//        po10co5total.setText(String.valueOf(TotalCo5_10));
+//         float AddWeight1_11 = Float.valueOf(po11w1.getText());
+//        float AddWeight2_11 = Float.valueOf(po11w2.getText());
+//        float AddWeight3_11 = Float.valueOf(po11w3.getText());
+//        float AddWeight4_11 = Float.valueOf(po11w4.getText());
+//        float AddWeight5_11 = Float.valueOf(po11w5.getText());
+//
+//        float TotalWeight_11 = AddWeight1_11 + AddWeight2_11 + AddWeight3_11 + AddWeight4_11 + AddWeight5_11;
+//
+//        int Addco11_11 = Integer.parseInt(po11co11.getText());
+//        int Addco12_11 = Integer.parseInt(po11co12.getText());
+//        int Addco13_11 = Integer.parseInt(po11co13.getText());
+//        int Addco14_11 = Integer.parseInt(po11co14.getText());
+//        int Addco15_11 = Integer.parseInt(po11co15.getText());
+//
+//        int TotalCo1_11 = Addco11_11 + Addco12_11 + Addco13_11 + Addco14_11 + Addco15_11;
+//
+//        int Addco21_11 = Integer.parseInt(po11co21.getText());
+//        int Addco22_11 = Integer.parseInt(po11co22.getText());
+//        int Addco23_11 = Integer.parseInt(po11co23.getText());
+//        int Addco24_11 = Integer.parseInt(po11co24.getText());
+//        int Addco25_11 = Integer.parseInt(po11co25.getText());
+//
+//        int TotalCo2_11 = Addco21_11 + Addco22_11 + Addco23_11 + Addco24_11 + Addco25_11;
+//
+//        int Addco31_11 = Integer.parseInt(po11co31.getText());
+//        int Addco32_11 = Integer.parseInt(po11co32.getText());
+//        int Addco33_11 = Integer.parseInt(po11co33.getText());
+//        int Addco34_11 = Integer.parseInt(po11co34.getText());
+//        int Addco35_11 = Integer.parseInt(po11co35.getText());
+//
+//        int TotalCo3_11 = Addco31_11 + Addco32_11 + Addco33_11 + Addco34_11 + Addco35_11;
+//
+//        int Addco41_11 = Integer.parseInt(po11co41.getText());
+//        int Addco42_11 = Integer.parseInt(po11co42.getText());
+//        int Addco43_11 = Integer.parseInt(po11co43.getText());
+//        int Addco44_11 = Integer.parseInt(po11co44.getText());
+//        int Addco45_11 = Integer.parseInt(po11co45.getText());
+//
+//        int TotalCo4_11 = Addco41_11 + Addco42_11 + Addco43_11 + Addco44_11 + Addco45_11;
+//
+//        int Addco51_11 = Integer.parseInt(po11co51.getText());
+//        int Addco52_11 = Integer.parseInt(po11co52.getText());
+//        int Addco53_11 = Integer.parseInt(po11co53.getText());
+//        int Addco54_11 = Integer.parseInt(po11co54.getText());
+//        int Addco55_11 = Integer.parseInt(po11co55.getText());
+//
+//        int TotalCo5_11 = Addco51_11 + Addco52_11 + Addco53_11 + Addco54_11 + Addco55_11;
+//
+//        // Update the Total Weight and CO Total TextFields
+//        po11wtotal.setText(String.valueOf(TotalWeight_11));
+//        po11co1total.setText(String.valueOf(TotalCo1_11));
+//        po11co2total.setText(String.valueOf(TotalCo2_11));
+//        po11co3total.setText(String.valueOf(TotalCo3_11));
+//        po11co4total.setText(String.valueOf(TotalCo4_11));
+//        po11co5total.setText(String.valueOf(TotalCo5_11));
+//        
+//        float AddWeight1_12 = Float.valueOf(po12w1.getText());
+//        float AddWeight2_12 = Float.valueOf(po12w2.getText());
+//        float AddWeight3_12 = Float.valueOf(po12w3.getText());
+//        float AddWeight4_12 = Float.valueOf(po12w4.getText());
+//        float AddWeight5_12 = Float.valueOf(po12w5.getText());
+//
+//        float TotalWeight_12 = AddWeight1_12 + AddWeight2_12 + AddWeight3_12 + AddWeight4_12 + AddWeight5_12;
+//
+//        int Addco11_12 = Integer.parseInt(po12co11.getText());
+//        int Addco12_12 = Integer.parseInt(po12co12.getText());
+//        int Addco13_12 = Integer.parseInt(po12co13.getText());
+//        int Addco14_12 = Integer.parseInt(po12co14.getText());
+//        int Addco15_12 = Integer.parseInt(po12co15.getText());
+//
+//        int TotalCo1_12 = Addco11_12 + Addco12_12 + Addco13_12 + Addco14_12 + Addco15_12;
+//
+//        int Addco21_12 = Integer.parseInt(po12co21.getText());
+//        int Addco22_12 = Integer.parseInt(po12co22.getText());
+//        int Addco23_12 = Integer.parseInt(po12co23.getText());
+//        int Addco24_12 = Integer.parseInt(po12co24.getText());
+//        int Addco25_12 = Integer.parseInt(po12co25.getText());
+//
+//        int TotalCo2_12 = Addco21_12 + Addco22_12 + Addco23_12 + Addco24_12 + Addco25_12;
+//
+//        int Addco31_12 = Integer.parseInt(po12co31.getText());
+//        int Addco32_12 = Integer.parseInt(po12co32.getText());
+//        int Addco33_12 = Integer.parseInt(po12co33.getText());
+//        int Addco34_12 = Integer.parseInt(po12co34.getText());
+//        int Addco35_12 = Integer.parseInt(po12co35.getText());
+//
+//        int TotalCo3_12 = Addco31_12 + Addco32_12 + Addco33_12 + Addco34_12 + Addco35_12;
+//
+//        int Addco41_12 = Integer.parseInt(po12co41.getText());
+//        int Addco42_12 = Integer.parseInt(po12co42.getText());
+//        int Addco43_12 = Integer.parseInt(po12co43.getText());
+//        int Addco44_12 = Integer.parseInt(po12co44.getText());
+//        int Addco45_12 = Integer.parseInt(po12co45.getText());
+//
+//        int TotalCo4_12 = Addco41_12 + Addco42_12 + Addco43_12 + Addco44_12 + Addco45_12;
+//
+//        int Addco51_12 = Integer.parseInt(po12co51.getText());
+//        int Addco52_12 = Integer.parseInt(po12co52.getText());
+//        int Addco53_12 = Integer.parseInt(po12co53.getText());
+//        int Addco54_12 = Integer.parseInt(po12co54.getText());
+//        int Addco55_12 = Integer.parseInt(po12co55.getText());
+//
+//        int TotalCo5_12 = Addco51_12 + Addco52_12 + Addco53_12 + Addco54_12 + Addco55_12;
+//
+//        // Update the Total Weight and CO Total TextFields
+//        po12wtotal.setText(String.valueOf(TotalWeight_12));
+//        po12co1total.setText(String.valueOf(TotalCo1_12));
+//        po12co2total.setText(String.valueOf(TotalCo2_12));
+//        po12co3total.setText(String.valueOf(TotalCo3_12));
+//        po12co4total.setText(String.valueOf(TotalCo4_12));
+//        po12co5total.setText(String.valueOf(TotalCo5_12));
+//
+    }
 }
 
     
@@ -4072,16 +3032,29 @@ po8co5total.setText(String.valueOf(TotalCo5_8));
         }
     }
 
-    @FXML
-    private void btnAddToDatabase (ActionEvent event) {
-//            private void Add (ActionEvent event) {
-
-    }
       public void initialize() {
         redirectDash.setCursor(Cursor.HAND);
                 redirectDownload.setCursor(Cursor.HAND);
 
                         redirectLogout.setCursor(Cursor.HAND);
 
+    }
+      
+        @FXML
+    private void clearBorders() {
+        TextField[] textFields = {po1w1, po1w2, po1w3, po1w4, po1w5, po1wtotal, po1co11, po1co12, po1co13, po1co14, po1co15, po1co1total, po1co21, po1co22, po1co23, po1co24, po1co25, po1co2total, po1co31, po1co32, po1co33, po1co34, po1co35, po1co3total, po1co41, po1co42, po1co43, po1co44, po1co45, po1co4total, po1co51, po1co52, po1co53, po1co54, po1co55, po1co5total};
+        TextArea[] textAreas = {po11, po12, po13, po14, po15, po1com1, po1com2, po1com3, po1com4, po1com5, po1ind1, po1ind2, po1ind3, po1ind4, po1ind5};
+
+        for (TextField textField : textFields) {
+            textField.setStyle("-fx-border-color: transparent;");
+        }
+
+        for (TextArea textArea : textAreas) {
+            textArea.setStyle("-fx-border-color: transparent;");
+        }
+    }
+
+    @FXML
+    private void Add1(ActionEvent event) {
     }
 }

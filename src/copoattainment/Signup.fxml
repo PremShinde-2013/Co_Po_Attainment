@@ -28,20 +28,28 @@
                         <Font name="Segoe UI" size="18.0" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" layoutX="89.0" layoutY="295.0" prefHeight="23.0" prefWidth="205.0" text="Create manage your co po's easily" textFill="WHITE">
+                <Label alignment="CENTER" layoutX="89.0" layoutY="295.0" prefHeight="23.0" prefWidth="220.0" text="Create manage your co po's easily" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI" size="12.0" />
+                        <Font name="Segoe UI" size="14.0" />
                     </font>
                 </Label>
             </children>
         </AnchorPane>
-        <Pane layoutX="488.0" layoutY="46.0" prefHeight="421.0" prefWidth="303.0" AnchorPane.bottomAnchor="36.0" AnchorPane.topAnchor="46.0">
+        <Pane layoutX="467.0" layoutY="46.0" prefHeight="421.0" prefWidth="341.0" AnchorPane.bottomAnchor="36.0" AnchorPane.topAnchor="46.0">
             <children>
-                <TextField fx:id="txtFirstName" layoutX="14.0" prefHeight="34.0" prefWidth="275.0" promptText="First Name" />
-                <PasswordField fx:id="txtPassword" layoutX="14.0" layoutY="157.0" prefHeight="34.0" prefWidth="275.0" promptText="Password" stylesheets="@../styling/fullstyling.css" />
-                <Button fx:id="btnSignup" layoutX="83.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#handleSignupButtonAction" prefHeight="34.0" prefWidth="137.0" stylesheets="@../styling/fullstyling.css" text="Sign up">
-                </Button>
-                <Button fx:id="btnLogin" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onMousePressed="#redirectToLogin" prefHeight="34.0" prefWidth="275.0" stylesheets="@../styling/fullstyling.css" text="Login" textFill="WHITE">
+                <TextField fx:id="txtFirstName" layoutX="5.0" layoutY="14.0" prefHeight="34.0" prefWidth="324.0" promptText="First Name">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+                <PasswordField fx:id="txtPassword" layoutX="5.0" layoutY="158.0" prefHeight="34.0" prefWidth="324.0" promptText="Password" stylesheets="@../styling/fullstyling.css">
+               <font>
+                  <Font size="14.0" />
+               </font></PasswordField>
+                <Button fx:id="btnSignup" layoutX="102.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#handleSignupButtonAction" prefHeight="34.0" prefWidth="137.0" stylesheets="@../styling/fullstyling.css" text="Sign up">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+                <Button fx:id="btnLogin" layoutX="34.0" layoutY="365.0" mnemonicParsing="false" onMousePressed="#redirectToLogin" prefHeight="34.0" prefWidth="275.0" stylesheets="@../styling/fullstyling.css" text="Login" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -49,9 +57,12 @@
                             </image>
                         </ImageView>
                     </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
                 </Button>
-                <Separator layoutX="14.0" layoutY="330.0" prefHeight="7.0" prefWidth="275.0" />
-                <Label alignment="CENTER" layoutX="136.0" layoutY="322.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="Or" textFill="#5b5a5a">
+                <Separator layoutX="30.0" layoutY="330.0" prefHeight="7.0" prefWidth="275.0" />
+                <Label alignment="CENTER" layoutX="152.0" layoutY="322.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="Or" textFill="#5b5a5a">
                     <font>
                         <Font name="Segoe UI" size="12.0" />
                     </font>
@@ -61,9 +72,18 @@
                         <Font name="Segoe UI" size="10.0" />
                     </font>
                 </Label>
-            <PasswordField fx:id="txtConfirmPassword" layoutX="14.0" layoutY="210.0" prefHeight="34.0" prefWidth="275.0" promptText="Confirm Password" stylesheets="@../styling/fullstyling.css" />
-            <TextField fx:id="txtLastName" layoutX="14.0" layoutY="54.0" prefHeight="34.0" prefWidth="275.0" promptText="Last Name" />
-            <TextField fx:id="txtUsername" layoutX="14.0" layoutY="107.0" prefHeight="34.0" prefWidth="275.0" promptText="Username or Email" />
+            <PasswordField fx:id="txtConfirmPassword" layoutX="5.0" layoutY="211.0" prefHeight="34.0" prefWidth="324.0" promptText="Confirm Password" stylesheets="@../styling/fullstyling.css">
+               <font>
+                  <Font size="14.0" />
+               </font></PasswordField>
+            <TextField fx:id="txtLastName" layoutX="5.0" layoutY="62.0" prefHeight="34.0" prefWidth="324.0" promptText="Last Name">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="txtUsername" layoutX="5.0" layoutY="109.0" prefHeight="34.0" prefWidth="324.0" promptText="Username ">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
             </children>
         </Pane>
         <Label alignment="CENTER" layoutX="394.0" layoutY="466.0" prefHeight="23.0" prefWidth="93.0" text="Design by TY CSE" textFill="#5b5a5a" AnchorPane.bottomAnchor="14.0">
