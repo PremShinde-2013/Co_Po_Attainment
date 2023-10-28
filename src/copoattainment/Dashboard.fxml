@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -51,18 +52,6 @@
                         <Insets left="40.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="alltables" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="totaltable">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/ic_usr.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="40.0" />
-                     </padding>
-                  </Button>
                   <Button fx:id="Logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#logoutbtn" prefHeight="49.0" prefWidth="262.0" styleClass="button1" stylesheets="@../styling/fullstyling2.css" text="Logout">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -95,192 +84,11 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Pane fx:id="table1" layoutX="10.0" layoutY="10.0" prefHeight="649.0" prefWidth="631.0">
+            <Pane fx:id="DownloadPane" layoutX="10.0" layoutY="10.0" prefHeight="649.0" prefWidth="631.0">
                <children>
                   <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #3d3d3d; -fx-background-radius: 70;" />
-                  <Button fx:id="downloadButton" layoutX="90.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleDownloadButton" prefHeight="94.0" prefWidth="138.0" text="Button" />
-               </children>
-            </Pane>
-            <Pane fx:id="tabletotal" prefHeight="649.0" prefWidth="631.0">
-               <children>
-                  <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #3d3d3d; -fx-background-radius: 70;" />
-                  <Pane layoutX="76.0" layoutY="106.0">
-                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
-                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
-                           <stroke>
-                              <LinearGradient endX="1.0" endY="1.0">
-                                 <stops>
-                                    <Stop color="BLACK" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </stroke>
-                           <fill>
-                              <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
-                                 <stops>
-                                    <Stop color="#03b5fc" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/icons8_Block_50px_1.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" layoutX="-6.0" layoutY="146.0" prefHeight="17.0" prefWidth="174.0" text="General" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="316.0" layoutY="106.0" prefHeight="202.0" prefWidth="179.0">
-                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
-                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
-                           <stroke>
-                              <LinearGradient endX="1.0" endY="1.0">
-                                 <stops>
-                                    <Stop color="BLACK" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </stroke>
-                           <fill>
-                              <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
-                                 <stops>
-                                    <Stop color="#68479f" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/icons8_Car_52px_2.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Transport" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="71.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
-                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
-                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
-                           <stroke>
-                              <LinearGradient endX="1.0" endY="1.0">
-                                 <stops>
-                                    <Stop color="BLACK" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </stroke>
-                           <fill>
-                              <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
-                                 <stops>
-                                    <Stop color="#ff52e2" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/icons8_Shopping_Cart_50px_2.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" layoutX="3.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Shopping" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="316.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
-                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
-                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" stroke="#ff924f" strokeType="INSIDE">
-                           <fill>
-                              <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
-                                 <stops>
-                                    <Stop color="#ff934f" />
-                                    <Stop color="WHITE" offset="0.9961685823754789" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/icons8_Bill_50px_2.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Bill" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="559.0" layoutY="354.0" prefHeight="202.0" prefWidth="179.0">
-                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
-                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
-                           <fill>
-                              <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
-                                 <stops>
-                                    <Stop color="#34e063" />
-                                    <Stop color="WHITE" offset="0.9961685823754789" />
-                                    <Stop color="WHITE" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/icons8_Broccoli_64px_2.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Grocery" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="559.0" layoutY="106.0" prefHeight="190.0" prefWidth="174.0">
-                     <children>
-                        <Button mnemonicParsing="false" opacity="0.7" prefHeight="190.0" prefWidth="168.0" styleClass="button2" stylesheets="@../styling/fullstyling2.css" />
-                        <Circle layoutX="84.0" layoutY="87.0" radius="50.0" strokeType="INSIDE">
-                           <fill>
-                              <LinearGradient endX="1.0" endY="1.0" startY="0.4952380952380952">
-                                 <stops>
-                                    <Stop color="#4f79ff" />
-                                    <Stop color="WHITE" offset="0.9961685823754789" />
-                                    <Stop color="#4f79ff" offset="1.0" />
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Circle>
-                        <ImageView fitHeight="49.0" fitWidth="37.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/icons8_Play_Button_50px.png" />
-                           </image>
-                        </ImageView>
-                        <Label alignment="CENTER" layoutX="1.0" layoutY="146.0" prefHeight="17.0" prefWidth="168.0" text="Entertainment" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
+                  <Button id="dark" fx:id="downloadButton" layoutX="428.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleDownloadButton" prefHeight="50.0" prefWidth="111.0" stylesheets="@../styling/style3.css" text="Download" />
+                  <TextField fx:id="TableToDownload" layoutX="100.0" layoutY="300.0" prefHeight="50.0" prefWidth="220.0" promptText="Enter Name Of Table To Download" />
                </children>
             </Pane>
             <Pane fx:id="table" prefHeight="649.0" prefWidth="631.0">

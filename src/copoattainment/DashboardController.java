@@ -72,74 +72,31 @@ public class DashboardController implements Initializable {
 
 //    int numberOfTables = ConnectionUtils.getNumberOfTables(ConnectionHolder.getConnectedDBName());
     @FXML
-    private Pane tabletotal;
-    @FXML
     private Pane table;
     @FXML
     private Button Logout;
     @FXML
-    private Button alltables;
-    @FXML
-    private Pane table1;
-    @FXML
     private Button downloadButton;
+    @FXML
+    private TextField TableToDownload;
+    @FXML
+    private Pane DownloadPane;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Set event handlers for buttons
-           tabletotal.setVisible(false);
-                      table1.setVisible(false);
+                      DownloadPane.setVisible(false);
 
     table.setVisible(true);
         btncopotable.setOnAction(event -> showPane(table));
-        btndownload.setOnAction(event -> showPane(tabletotal));
-                alltables.setOnAction(event -> showPane(table1));
+        btndownload.setOnAction(event -> showPane(DownloadPane));
+
 
                 Table.setOnAction(event -> openCopotableWindow(event));
-// int numberOfTables = ConnectionUtils.getNumberOfTables(ConnectionHolder.getConnectedDBName());
+                                Table2.setOnAction(event -> openCopotableWindow(event));
 
-//        System.out.println("Number of tables: " + numberOfTables);
-//System.out.println("tablemain visibility: " + table.isVisible());
 
-// for (int i = 0; i < numberOfTables; i++) {
-//        Pane tablePane = createTablePane(i);
-//        GridPane.setColumnIndex(tablePane, i % 2); // Adjust grid column index as needed
-//        GridPane.setRowIndex(tablePane, i / 2);   // Adjust grid row index as needed
-//        table.getChildren().add(tablePane);
-//    }
-    }    
-    
-//    private Pane createTablePane(int tableIndex) {
-//    Pane pane = new Pane();
-//    // Customize the properties of the pane as needed
-//    pane.setPrefHeight(202.0);
-//    pane.setPrefWidth(179.0);
-//
-//    Button button = new Button();
-//    button.setMnemonicParsing(false);
-//    button.setOpacity(0.7);
-//    button.setPrefHeight(190.0);
-//    button.setPrefWidth(168.0);
-//    button.getStyleClass().add("button2");
-//    button.getStylesheets().add("@../styling/fullstyling2.css"); // Add the stylesheet
-//
-//    // Set other properties for the button and add event handlers as needed
-//
-//        Circle circle = new Circle();
-//    // Customize the properties of the circle as needed
-//
-//        ImageView imageView = new ImageView();
-//    // Customize the properties of the image view and set the image
-//
-//    Label label = new Label();
-//    // Customize the properties of the label and set the text
-//
-//    // Add button, circle, imageView, and label to the pane
-//
-//    return pane;
-//}
-//    
-    
+    }
     
     
     
@@ -165,9 +122,8 @@ public class DashboardController implements Initializable {
     
     private void showPane(Pane paneToShow) {
         // Hide all panes
-        tabletotal.setVisible(false);
         table.setVisible(false);
-                      table1.setVisible(false);
+                      DownloadPane.setVisible(false);
 
         // Show the specified pane
         paneToShow.setVisible(true);
@@ -194,70 +150,71 @@ public class DashboardController implements Initializable {
     }
     }
 
-    @FXML
-    private void handleDownloadButton(ActionEvent event) {
-          try {
+@FXML
+private void handleDownloadButton(ActionEvent event) {
+    try {
+        String tableName = TableToDownload.getText(); // Get the table name from the TextField
+
+        if (tableName.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Error", "Please enter a table name.");
+            return;
+        }
+
         Connection connection = ConnectionUtils.conDB(ConnectionHolder.getConnectedDBName());
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save CSV File");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
+        fileChooser.setInitialFileName(tableName + ".csv"); // Set the default file name
 
-            DatabaseMetaData metaData = connection.getMetaData();
-            ResultSet tables = metaData.getTables(null, null, "%", null);
+        File file = fileChooser.showSaveDialog(new Stage());
 
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Save CSV File");
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
-            File file = fileChooser.showSaveDialog(new Stage());
+        if (file != null) {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            String csvData = generateCSVData(connection, tableName);
+            writer.write(csvData);
+            writer.close();
 
-            if (file != null) {
-                BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            showAlert(Alert.AlertType.INFORMATION, "Download Successful", "CSV file has been downloaded.");
+        }
 
-                while (tables.next()) {
-                    String tableName = tables.getString(3);
-                    String csvData = generateCSVData(connection, tableName);
+    } catch (SQLException | IOException e) {
+        e.printStackTrace();
+        showAlert(Alert.AlertType.ERROR, "Error", "An error occurred while downloading the CSV file.");
+    }
+}
 
-                    writer.write(csvData);
-                    writer.newLine();
-                }
+private String generateCSVData(Connection connection, String tableName) throws SQLException {
+    StringBuilder csvData = new StringBuilder();
 
-                writer.close();
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery("SELECT * FROM " + tableName);
 
-                showAlert(Alert.AlertType.INFORMATION, "Download Successful", "CSV files have been downloaded.");
-            }
+    ResultSetMetaData metaData = resultSet.getMetaData();
+    int columnCount = metaData.getColumnCount();
 
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Error", "An error occurred while downloading the CSV files.");
+    // Write column names to the CSV string
+    for (int i = 1; i <= columnCount; i++) {
+        csvData.append("\"").append(metaData.getColumnName(i)).append("\"");
+        if (i < columnCount) {
+            csvData.append(",");
         }
     }
+    csvData.append(System.lineSeparator());
 
-    private String generateCSVData(Connection connection, String tableName) throws SQLException {
-        StringBuilder csvData = new StringBuilder();
-
-        Statement statement = connection.createStatement();
-ResultSet resultSet = statement.executeQuery("SELECT * FROM " + tableName);
-
-        ResultSetMetaData metaData = resultSet.getMetaData();
-        int columnCount = metaData.getColumnCount();
-
+    // Write data rows to the CSV string
+    while (resultSet.next()) {
         for (int i = 1; i <= columnCount; i++) {
-            csvData.append(metaData.getColumnName(i));
+            String value = resultSet.getString(i);
+            csvData.append("\"").append(value).append("\"");
             if (i < columnCount) {
                 csvData.append(",");
             }
         }
         csvData.append(System.lineSeparator());
-
-        while (resultSet.next()) {
-            for (int i = 1; i <= columnCount; i++) {
-                csvData.append(resultSet.getString(i));
-                if (i < columnCount) {
-                    csvData.append(",");
-                }
-            }
-            csvData.append(System.lineSeparator());
-        }
-
-        return csvData.toString();
     }
+
+    return csvData.toString();
+}
 
     // ... your existing code ...
 

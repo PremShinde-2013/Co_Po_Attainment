@@ -189,7 +189,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>-->
                         </Button>
-                        <Button fx:id="redirectDownload" layoutX="728.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRedirectDownload" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: while;" styleClass="menubar" stylesheets="@../styling/style3.css" text="Download" HBox.hgrow="ALWAYS">
+                        <Button fx:id="directDownload" layoutX="728.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handledirectDownload" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: while;" styleClass="menubar" stylesheets="@../styling/style3.css" text="Download" HBox.hgrow="ALWAYS">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

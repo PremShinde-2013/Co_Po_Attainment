@@ -33,6 +33,21 @@ import utils.ConnectionUtils;
 import java.util.Arrays;
 
 
+
+import javafx.fxml.FXML;
+import javafx.event.ActionEvent;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 /**
  * FXML Controller class
  *
@@ -133,8 +148,6 @@ public class COPOTableController implements Initializable {
     @FXML
     private Button btnAdd;
     @FXML
-    private Button btnmapping;
-    @FXML
     private TextArea po11;
     @FXML
     private TextArea po12;
@@ -155,16 +168,13 @@ public class COPOTableController implements Initializable {
      private String username;
     @FXML
     private Button redirectDash;
-    @FXML
     private Button redirectDownload;
     @FXML
     private Button redirectLogout;
     @FXML
     private Button btnmappingtrue;
     @FXML
-    private Button btnAdd1;
-    @FXML
-    private TextField dbtablename1;
+    private Button directDownload;
 
 //     get username while login
       public void setUsername(String username) {
@@ -2972,7 +2982,7 @@ private void Mapping(ActionEvent event) {
 //    public void initialize(URL url, ResourceBundle rb) {
 //        // TODO
 //    } 
-    
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 //        Connect();
@@ -3010,9 +3020,6 @@ private void Mapping(ActionEvent event) {
 
     }
 
-    @FXML
-    private void handleRedirectDownload(ActionEvent event) {
-    }
 
     @FXML
     private void handleRedirectLogout(ActionEvent event) {
@@ -3040,7 +3047,6 @@ private void Mapping(ActionEvent event) {
 
     }
       
-        @FXML
     private void clearBorders() {
         TextField[] textFields = {po1w1, po1w2, po1w3, po1w4, po1w5, po1wtotal, po1co11, po1co12, po1co13, po1co14, po1co15, po1co1total, po1co21, po1co22, po1co23, po1co24, po1co25, po1co2total, po1co31, po1co32, po1co33, po1co34, po1co35, po1co3total, po1co41, po1co42, po1co43, po1co44, po1co45, po1co4total, po1co51, po1co52, po1co53, po1co54, po1co55, po1co5total};
         TextArea[] textAreas = {po11, po12, po13, po14, po15, po1com1, po1com2, po1com3, po1com4, po1com5, po1ind1, po1ind2, po1ind3, po1ind4, po1ind5};
@@ -3054,7 +3060,68 @@ private void Mapping(ActionEvent event) {
         }
     }
 
+   
+
     @FXML
-    private void Add1(ActionEvent event) {
+    private void handledirectDownload(ActionEvent event) {
+          String tableName = dbtablename.getText();
+        if (tableName.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Error", "Please enter a table name.");
+            return;
+        }
+
+        try {
+            Connection connection = ConnectionUtils.conDB(ConnectionHolder.getConnectedDBName());
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + tableName);
+            ResultSetMetaData metaData = resultSet.getMetaData();
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Save CSV File");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
+            fileChooser.setInitialFileName(tableName + ".csv"); // Set the default file name
+
+            File file = fileChooser.showSaveDialog(new Stage());
+
+            if (file != null) {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                // Write column names to the CSV file
+                for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                    writer.write("\"" + metaData.getColumnName(i) + "\"");
+                    if (i < metaData.getColumnCount()) {
+                        writer.write(",");
+                    }
+                }
+                writer.newLine();
+
+                // Write data rows to the CSV file
+                while (resultSet.next()) {
+                    for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                        writer.write("\"" + resultSet.getString(i) + "\"");
+                        if (i < metaData.getColumnCount()) {
+                            writer.write(",");
+                        }
+                    }
+                    writer.newLine();
+                }
+
+                writer.close();
+
+                showAlert(Alert.AlertType.INFORMATION, "Download Successful", "CSV file has been downloaded.");
+            }
+
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error", "An error occurred while downloading the CSV file.");
+        }
     }
+    
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+    Alert alert = new Alert(alertType);
+    alert.setTitle(title);
+    alert.setContentText(content);
+    alert.showAndWait();
+    }
+
+
 }
