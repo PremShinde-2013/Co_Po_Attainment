@@ -88,7 +88,7 @@
                <children>
                   <Pane layoutX="-25.0" layoutY="-178.0" prefHeight="303.0" prefWidth="467.0" rotate="41.6" style="-fx-background-color: #3d3d3d; -fx-background-radius: 70;" />
                   <Button id="dark" fx:id="downloadButton" layoutX="428.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleDownloadButton" prefHeight="50.0" prefWidth="111.0" stylesheets="@../styling/style3.css" text="Download" />
-                  <TextField fx:id="TableToDownload" layoutX="100.0" layoutY="300.0" prefHeight="50.0" prefWidth="220.0" promptText="Enter Name Of Table To Download" />
+                  <TextField fx:id="TableToDownload" layoutX="100.0" layoutY="300.0" prefHeight="50.0" prefWidth="260.0" promptText="Enter Name Of Table To Download" />
                </children>
             </Pane>
             <Pane fx:id="table" prefHeight="649.0" prefWidth="631.0">
